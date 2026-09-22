@@ -35,6 +35,10 @@ Every building represents an idea; 12 districts keep their addresses while new p
 
 Original project models are in `public/assets/projects`; scenery attribution is in `ASSET-CREDITS.md`. Read `AGENTS.md` before contributing.
 
+## Jev resident decisions
+
+The 24 fictional residents can use Jev for fast, typed ambient action selection while the game retains movement, animation, and truth-state control. Without credentials they use a deterministic local fallback. See [JEV-NPCS.md](JEV-NPCS.md) for server-only configuration.
+
 ## Edit the Blender buildings
 
 Open [the editable model library](assets/blender/karmic-ideas.blend) in Blender 4.5+. Its 77 named objects are arranged as a review grid. [The feature catalogue](assets/blender/catalogue.json) maps each idea to its visible features, stable GLB filename, grounded bounds, and triangle count. The game inspector explains these features when an invention is selected.

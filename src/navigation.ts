@@ -1,4 +1,5 @@
 import {zones, type ZoneId} from './state.ts';
+import {isCivilizationLand} from './island-shape.ts';
 /** Route over the actual rendered land, avoiding buildings, trees and unbridged water. */
 export function walkGrid(start:{x:number;z:number},end:{x:number;z:number},tiles:Set<string>){
  const nearest=(p:{x:number;z:number})=>{let best:{x:number;z:number}|undefined,distance=Infinity;for(const k of tiles){const [x,z]=k.split(',').map(Number),d=(p.x-x)**2+(p.z-z)**2;if(d<distance){distance=d;best={x,z};}}return best;};
@@ -11,7 +12,7 @@ export function walkGrid(start:{x:number;z:number},end:{x:number;z:number},tiles
 export function pathBetween(start:{x:number;z:number},end:{x:number;z:number},active:ZoneId[]){
  const areas=zones.filter(z=>active.includes(z.id));
  const walkable=(x:number,z:number)=>{
-  const land=x*x/290+z*z/260<1||areas.some(a=>Math.hypot(x-a.x,z-a.z)<4.8);
+  const land=isCivilizationLand(x,z)||areas.some(a=>Math.hypot(x-a.x,z-a.z)<4.8);
   const obstructed=areas.some(a=>Math.abs(x-a.x)<2.8&&Math.abs(z-a.z)<2.2);
   return land&&!obstructed;
  };

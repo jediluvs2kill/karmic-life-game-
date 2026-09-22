@@ -2,10 +2,11 @@ import * as THREE from 'three';
 import {groundHeight,landmarks} from './civilization.ts';
 import {walkGrid} from './navigation.ts';
 import {projectPosition,type LivingProject} from './projects.ts';
+import type {NpcDecision} from './npc-minds.ts';
 
 export type ResidentRole='runner'|'courier'|'builder'|'gardener'|'player';
 type Point={x:number;z:number};
-export type ResidentPlan={id:string;role:ResidentRole;projectId:string;route:Point[];phase:number;speed:number;pause:number;color:string;pair?:number};
+export type ResidentPlan={id:string;name:string;role:ResidentRole;projectId:string;route:Point[];phase:number;speed:number;pause:number;color:string;pair?:number};
 export type ResidentPose=Point&{y:number;yaw:number;gait:number;gesture:number;moving:boolean};
 const assignments:[ResidentRole,string][]=[
  ['runner','run-dna'],['runner','creatine'],['runner','run-dna'],['runner','creatine'],['runner','kinetics'],['runner','body-metrics'],
@@ -15,6 +16,7 @@ const assignments:[ResidentRole,string][]=[
  ['player','run-dna'],['player','run-dna'],['player','karmic-life'],['player','karmic-life']
 ];
 const colors=['#f17160','#55c8c6','#f1ba4f','#9678d5','#77b650','#e994c2'];
+const names=['Aarav','Mira','Kabir','Tara','Vihaan','Diya','Reyansh','Ira','Arjun','Meera','Dev','Saanvi','Rohan','Anaya','Ishaan','Naina','Kiran','Aditi','Neel','Riya','Yuvan','Myra','Advait','Siya'];
 const speed:Record<ResidentRole,number>={runner:3.2,courier:1.85,builder:1.15,gardener:1,player:0};
 const pauses:Record<ResidentRole,number>={runner:.3,courier:2.4,builder:7,gardener:6,player:1};
 
@@ -54,7 +56,7 @@ export function planInhabitants(projects:LivingProject[],walkable:Set<string>,li
    for(const key of paths){const [x,z]=key.split(',').map(Number);if(x===start.x&&z===start.z)continue;const distance=(x-end.x)**2+(z-end.z)**2;if(distance<best){best=distance;alternative={x,z};}}
    if(alternative)route=walkGrid(start,alternative,paths);
   }
-  return [{id:'resident-'+String(i+1).padStart(2,'0'),role,projectId:project.id,route:route.length?route:[start],phase:i*1.71,speed:speed[role],pause:pauses[role],color:colors[i%colors.length],...(role==='player'?{pair:Math.floor((i-20)/2)}:{})}];
+  return [{id:'resident-'+String(i+1).padStart(2,'0'),name:names[i],role,projectId:project.id,route:route.length?route:[start],phase:i*1.71,speed:speed[role],pause:pauses[role],color:colors[i%colors.length],...(role==='player'?{pair:Math.floor((i-20)/2)}:{})}];
  });
 }
 
@@ -98,6 +100,7 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
  const props=batch('parcels and work tools',new THREE.BoxGeometry(1,1,1),24);
  const balls=batch('playground balls',new THREE.SphereGeometry(1,10,8),2);
  let residents:ResidentPlan[]=[];
+ let minds=new Map<string,NpcDecision>();
  const matrix=new THREE.Matrix4(),rotation=new THREE.Quaternion(),yawRotation=new THREE.Quaternion(),position=new THREE.Vector3(),scale=new THREE.Vector3(),up=new THREE.Vector3(0,1,0);
  const limbStart=new THREE.Vector3(),limbEnd=new THREE.Vector3(),limbDirection=new THREE.Vector3(),limbMid=new THREE.Vector3();
  const color=new THREE.Color();
@@ -130,14 +133,14 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
   let propIndex=0,ballIndex=0;
   const poses=residents.map(resident=>sampleInhabitant(resident,timeSeconds,options.reducedMotion));
   residents.forEach((resident,i)=>{
-   const pose=poses[i],working=!pose.moving&&(resident.role==='builder'||resident.role==='gardener'),playing=resident.role==='player';
+   const pose=poses[i],mind=minds.get(resident.id),working=!pose.moving&&(mind?['build','garden','inspect'].includes(mind.action):resident.role==='builder'||resident.role==='gardener'),playing=!pose.moving&&(mind?mind.action==='play':resident.role==='player'),greeting=!pose.moving&&mind?.action==='greet';
    if(playing){const partner=residents.findIndex(other=>other.pair===resident.pair&&other.id!==resident.id);if(partner>=0)pose.yaw=Math.atan2(poses[partner].x-pose.x,poses[partner].z-pose.z);}
    const bounce=pose.moving?Math.abs(pose.gait)*(resident.role==='runner'?.11:.045):0;
    place(torso,i,pose,[0,1.03+bounce,0],[.26,.37,.17]);place(head,i,pose,[0,1.57+bounce,0],[.2,.22,.19]);place(hat,i,pose,[0,1.72+bounce,-.015],[.215,.105,.205]);
    for(const side of [-1,1]){
     const k=i*2+(side===1?1:0),stride=pose.gait*side*(resident.role==='runner'?.35:.2),foot:[number,number,number]=[side*.14,.13+Math.max(0,stride)*.25,stride];
     limb(legs,k,pose,[side*.14,.76+bounce,0],foot);place(shoes,k,pose,[foot[0],foot[1]-.025,foot[2]+.065],[.115,.08,.19]);
-    const handY=working?1.05+(.5+.5*pose.gesture)*.45:playing?1.06+pose.gesture*.2:.72+bounce;
+    const handY=working?1.05+(.5+.5*pose.gesture)*.45:playing?1.06+pose.gesture*.2:greeting?1.28+pose.gesture*.22:.72+bounce;
     const hand:[number,number,number]=[side*.31,handY,working||playing?.33:-stride];
     limb(arms,k,pose,[side*.27,1.26+bounce,0],hand);place(eyes,k,pose,[side*.075,1.59+bounce,.176],[.032,.038,.025]);
     if(side===1&&working){place(props,propIndex,pose,[hand[0],hand[1]+.11,hand[2]],[resident.role==='builder'?.28:.19,.14,.13]);tint(props,propIndex++,resident.role==='builder'?'#8bcddd':'#80c475');}
@@ -153,5 +156,5 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
   props.count=propIndex;balls.count=ballIndex;
   for(const mesh of meshes){mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;}
  }
- return {rebuild,update,get count(){return residents.length;},dispose(){scene.remove(group);for(const mesh of meshes){mesh.geometry.dispose();mesh.dispose();}material.dispose();}};
+ return {rebuild,update,setMinds(decisions:NpcDecision[]){minds=new Map(decisions.map(decision=>[decision.id,decision]));},get count(){return residents.length;},get mindCount(){return minds.size;},dispose(){scene.remove(group);for(const mesh of meshes){mesh.geometry.dispose();mesh.dispose();}material.dispose();}};
 }

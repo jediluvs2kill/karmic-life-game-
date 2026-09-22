@@ -21,10 +21,10 @@ export const fantasyFleet:BoatPlan[]=[
 export function sampleBoat(plan:BoatPlan,time:number,reducedMotion=false):BoatPose{
  const clock=reducedMotion?0:Math.max(0,Number.isFinite(time)?time:0),angle=(plan.phase+clock*plan.speed*plan.direction)*Math.PI*2;
  let x=0,z=0,dx=0,dz=0;
- if(plan.route==='south'){x=Math.cos(angle)*34;z=47+plan.lane*2.2+Math.sin(angle)*3;dx=-Math.sin(angle)*34*plan.direction;dz=Math.cos(angle)*3*plan.direction;}
- else if(plan.route==='north'){x=Math.cos(angle)*39;z=-47-plan.lane*2+Math.sin(angle)*2.8;dx=-Math.sin(angle)*39*plan.direction;dz=Math.cos(angle)*2.8*plan.direction;}
- else if(plan.route==='east'){x=47+plan.lane*2+Math.sin(angle)*2.8;z=Math.cos(angle)*32;dx=Math.cos(angle)*2.8*plan.direction;dz=-Math.sin(angle)*32*plan.direction;}
- else{x=-47-plan.lane*2+Math.sin(angle)*2.8;z=Math.cos(angle)*32;dx=Math.cos(angle)*2.8*plan.direction;dz=-Math.sin(angle)*32*plan.direction;}
+ if(plan.route==='south'){x=Math.cos(angle)*38;z=84+plan.lane*2.2+Math.sin(angle)*3;dx=-Math.sin(angle)*38*plan.direction;dz=Math.cos(angle)*3*plan.direction;}
+ else if(plan.route==='north'){x=Math.cos(angle)*41;z=-50-plan.lane*2+Math.sin(angle)*2.8;dx=-Math.sin(angle)*41*plan.direction;dz=Math.cos(angle)*2.8*plan.direction;}
+ else if(plan.route==='east'){x=62+plan.lane*2+Math.sin(angle)*2.8;z=8+Math.cos(angle)*45;dx=Math.cos(angle)*2.8*plan.direction;dz=-Math.sin(angle)*45*plan.direction;}
+ else{x=-59-plan.lane*2+Math.sin(angle)*2.8;z=2+Math.cos(angle)*44;dx=Math.cos(angle)*2.8*plan.direction;dz=-Math.sin(angle)*44*plan.direction;}
  return {x,y:-5.48+(reducedMotion?0:Math.sin(clock*1.8+plan.phase*17)*.09),z,yaw:Math.atan2(dx,dz),bob:reducedMotion?0:Math.sin(clock*2.4+plan.phase*23)};
 }
 

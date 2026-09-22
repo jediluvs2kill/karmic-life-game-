@@ -1,0 +1,27 @@
+{
+  "id": "contribution:8a9561f1-4107-4826-b375-af8e00341d1b",
+  "date": "2026-09-22",
+  "title": "Reshaped civilization as Akhand Bharat",
+  "summary": "Rebuilt the public world terrain and mini-map as a recognizable Akhand Bharat inspired continent, repositioned all 77 invention landmarks, preserved unique plots, connected NPC routes, and added a typed Jev NPC decision adapter with a deterministic local fallback.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/island-shape.ts"
+  }
+}
