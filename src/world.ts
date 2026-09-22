@@ -16,7 +16,7 @@ import {createInhabitants} from './inhabitants';
 import {createAnimeAnimals} from './anime-animals';
 import {createWeatherPockets} from './weather-pockets';
 import {createFantasyBoats} from './fantasy-boats';
-import {createTrippySkyline} from './trippy-skyline';
+import {configureWorldCamera,panCamera,cameraDestination} from './camera-navigation';
 import type {NpcDecision} from './npc-minds';
 import {projectsAt,projectPosition,type LivingProject} from './projects';
 
@@ -29,9 +29,9 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  // Broad shadow maps made the voxel terrain self-shadow and obscured the inventions.
  // Form comes from directional lighting; a faint contact wash grounds each asset.
  renderer.shadowMap.enabled=false;
- renderer.domElement.setAttribute('aria-label','Interactive 3D Akhand Bharat inspired fantasy continent. Hold the middle mouse button and drag to rotate, scroll to zoom, or click a district to visit.');
+ renderer.domElement.setAttribute('aria-label','Interactive 3D Akhand Bharat inspired fantasy continent. Drag to pan, middle-drag to rotate, scroll over any location to zoom there. Double click to set an orbit point. Focus the world and use WASD or arrow keys to move.');
  host.append(renderer.domElement);
- const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,0,1);controls.enableDamping=true;controls.minDistance=12;controls.maxDistance=2200;controls.maxPolarAngle=Math.PI*.47;controls.minPolarAngle=.22;
+ const controls=new OrbitControls(camera,host);controls.target.set(0,0,1);configureWorldCamera(controls);
  controls.mouseButtons.MIDDLE=THREE.MOUSE.ROTATE;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const projectAssets=createProjectAssets(()=>{host.dataset.ideaAssetsLoaded=String(projectAssets.loaded);host.dispatchEvent(new CustomEvent('world-project-assets-ready'));});
@@ -42,7 +42,13 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  const animals=createAnimeAnimals(scene,{reducedMotion:reduced});
  const pocketWeather=createWeatherPockets(scene,{reducedMotion:reduced});
  const boats=createFantasyBoats(scene,{reducedMotion:reduced});
- const skyline=createTrippySkyline(scene,{reducedMotion:reduced});
+ host.tabIndex=0;
+ const heldKeys=new Set<string>();
+ const movementKeys=['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright'];
+ host.addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(movementKeys.includes(key)){e.preventDefault();heldKeys.add(key);gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);}});
+ host.addEventListener('keyup',e=>heldKeys.delete(e.key.toLowerCase()));
+ host.addEventListener('blur',()=>heldKeys.clear());
+ window.addEventListener('blur',()=>heldKeys.clear());
  controls.addEventListener('start',()=>{gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);});
  const ambient=new THREE.HemisphereLight('#d5eeff','#e5d8be',1.75);scene.add(ambient);
  const sun=new THREE.DirectionalLight('#fff0d7',2.2);sun.position.set(-30,50,35);scene.add(sun);
@@ -87,7 +93,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   resetGeometry();records=worldAt(save,date);projects=projectsAt(save,date);host.dataset.projectCount=String(projects.length);liveView=date===save.events.reduce((latest,event)=>event.date>latest?event.date:latest,'');
   walkable=buildLandscape(projects,cube,scenery.place);
   residents.rebuild(projects,walkable);host.dataset.residentCount=String(residents.count);
-  animals.rebuild(projects,walkable);host.dataset.animalCount=String(animals.count);host.dataset.weatherPocketCount=String(pocketWeather.count);host.dataset.boatCount=String(boats.count);host.dataset.skylineTowerCount=String(skyline.count);
+  animals.rebuild(projects,walkable);host.dataset.animalCount=String(animals.count);host.dataset.weatherPocketCount=String(pocketWeather.count);host.dataset.boatCount=String(boats.count);
   // District addresses remain stable; each invention is now the visible landmark.
   projects.forEach(pavilion);void projectAssets.load();
   const matrix=new THREE.Matrix4();const quaternion=new THREE.Quaternion();const position=new THREE.Vector3();const scale=new THREE.Vector3();
@@ -108,10 +114,13 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  const marker=new THREE.Mesh(new THREE.RingGeometry(3.7,3.82,48),new THREE.MeshBasicMaterial({color:'#fff0bb',side:THREE.DoubleSide}));marker.rotation.x=-Math.PI/2;marker.position.y=.65;marker.visible=false;scene.add(marker);
  const avatar=new THREE.Group();const avatarMaterial=new THREE.MeshStandardMaterial({color:'#f5c08f'});const head=new THREE.Mesh(new THREE.BoxGeometry(.45,.45,.45),avatarMaterial);head.position.y=1.35;avatar.add(head);const body=new THREE.Mesh(new THREE.BoxGeometry(.5,.65,.32),new THREE.MeshStandardMaterial({color:'#efcc67'}));body.position.y=.83;avatar.add(body);for(const dx of [-.14,.14]){const leg=new THREE.Mesh(new THREE.BoxGeometry(.16,.45,.2),new THREE.MeshStandardMaterial({color:'#3a5563'}));leg.position.set(dx,.35,0);avatar.add(leg);}avatar.position.set(0,.35,8);scene.add(avatar);
  let target:THREE.Vector3|undefined;const raycaster=new THREE.Raycaster();const pointer=new THREE.Vector2();let down={x:0,y:0};
- renderer.domElement.addEventListener('pointerdown',e=>{if(e.button===0)down={x:e.clientX,y:e.clientY};});
- renderer.domElement.addEventListener('auxclick',e=>{if(e.button===1)e.preventDefault();});
- renderer.domElement.addEventListener('pointerup',e=>{if(e.button!==0||Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)return;const rect=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);const hit=raycaster.intersectObjects(proxies)[0];if(hit){if(hit.object.userData.project)onProject(hit.object.userData.project);else{selectedProject=undefined;focus(hit.object.userData.zone);onSelect(hit.object.userData.zone);}}});
- function focusProject(id:string){const p=projects.find(p=>p.id===id);if(!p)return;selected=p.zone;selectedProject=id;const pos=projectPosition(p,records.find(r=>r.id===p.zone)!);pos.y+=2;marker.visible=false;const mobile=matchMedia('(max-width:700px)').matches,dx=mobile?0:4,dz=mobile?0:-2,dy=mobile?-3:0;const zoom=landmarks[id]?1.6:1;const duration=reduced?0:1;gsap.to(controls.target,{x:pos.x+dx,y:pos.y+dy,z:pos.z+dz,duration,overwrite:true});gsap.to(camera.position,{x:pos.x+10*zoom+dx,y:pos.y+12*zoom+dy,z:pos.z+17*zoom+dz,duration,overwrite:true});}
+ host.addEventListener('pointerdown',e=>{host.focus({preventScroll:true});if(e.button===0)down={x:e.clientX,y:e.clientY};});
+ host.addEventListener('auxclick',e=>{if(e.button===1)e.preventDefault();});
+ host.addEventListener('pointerup',e=>{if(e.button!==0||Math.hypot(e.clientX-down.x,e.clientY-down.y)>6)return;const rect=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);const hit=raycaster.intersectObjects(proxies)[0];if(hit){if(hit.object.userData.project)onProject(hit.object.userData.project);else{selectedProject=undefined;focus(hit.object.userData.zone);onSelect(hit.object.userData.zone);}}});
+ function flyTo(point:THREE.Vector3,distance?:number){const destination=cameraDestination(camera,controls,point,distance),duration=reduced?0:.65;gsap.to(controls.target,{...destination.target,duration,overwrite:true});gsap.to(camera.position,{...destination.position,duration,overwrite:true});}
+ function focusPoint(x:number,z:number){flyTo(new THREE.Vector3(x,groundHeight(x,z)+1,z));}
+ function focusProject(id:string){const p=projects.find(p=>p.id===id);if(!p)return;selected=p.zone;selectedProject=id;const pos=projectPosition(p);marker.visible=false;flyTo(new THREE.Vector3(pos.x,pos.y+3,pos.z),landmarks[id]?26:16);}
+ host.addEventListener('dblclick',e=>{const rect=renderer.domElement.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);const hit=raycaster.intersectObjects(proxies)[0];if(hit?.object.userData.project){onProject(hit.object.userData.project);return;}const point=new THREE.Vector3();if(raycaster.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0,1,0),-.2),point))focusPoint(point.x,point.z);});
  function focus(id:ZoneId){selectedProject=undefined;const changed=selected!==id;selected=id;const r=records.find(z=>z.id===id);if(!r)return;marker.visible=!!r.level;marker.position.set(r.x,.65,r.z);target=new THREE.Vector3(r.x,.35,r.z+3.5);labelItems.forEach(l=>l.el.classList.toggle('selected',l.el.textContent===r.name));if(changed&&r.level){const duration=reduced?0:1.2;gsap.to(controls.target,{x:r.x+2,y:1,z:r.z,duration,ease:'power2.inOut',overwrite:true});gsap.to(camera.position,{x:r.x+15,y:24,z:r.z+30,duration,ease:'power2.inOut',overwrite:true});}}
  function archipelago(){const radius=Math.max(78,...projects.map(p=>{const v=projectPosition(p);return Math.hypot(v.x,v.z)+8;}));gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);const fit=1.1*Math.max(1,host.clientHeight/host.clientWidth);camera.far=Math.max(4000,radius*8);camera.updateProjectionMatrix();controls.maxDistance=Math.max(2200,radius*5);camera.position.set(radius*.38*fit,radius*1.85*fit,radius*2.45*fit);controls.target.set(2,0,12);selected=undefined;selectedProject=undefined;marker.visible=false;controls.update();}
  function home(){gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);const aspect=host.clientWidth/host.clientHeight;const fit=.97*Math.max(1,(host.clientWidth<700?.84:1.35)/aspect);camera.position.set(18*fit,105*fit,150*fit);controls.target.set(2,0,12);selected=undefined;selectedProject=undefined;marker.visible=false;controls.update();}
@@ -120,15 +129,15 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();running=false;host.dispatchEvent(new CustomEvent('world-error',{detail:'Graphics paused. Reload to restore your island; your save is safe.'}));});
  renderer.domElement.addEventListener('webglcontextrestored',()=>{running=true;});
  const projected=new THREE.Vector3();
- let sampleStart=performance.now(),sampleFrames=0;
- function frame(now:number){requestAnimationFrame(frame);if(!running||document.hidden||now-last<32)return;const dt=Math.min((now-last)/1000,.05);last=now;controls.update();
+ let sampleStart=performance.now(),sampleFrames=0,lastCameraReport=0;
+ function frame(now:number){requestAnimationFrame(frame);if(!running||document.hidden||now-last<32)return;const dt=Math.min((now-last)/1000,.05);last=now;panCamera(camera,controls,Number(heldKeys.has('d')||heldKeys.has('arrowright'))-Number(heldKeys.has('a')||heldKeys.has('arrowleft')),Number(heldKeys.has('w')||heldKeys.has('arrowup'))-Number(heldKeys.has('s')||heldKeys.has('arrowdown')),dt);controls.update();
   renderer.info.reset();
   if(!reduced)ocean.update(now*.001);
   residents.update(now*.001,dt,liveView);
   animals.update(now*.001,liveView);
   pocketWeather.update(now*.001,liveView);
   boats.update(now*.001,liveView);
-  skyline.update(now*.001,liveView);
+  if(now-lastCameraReport>200){lastCameraReport=now;host.dispatchEvent(new CustomEvent('world-camera',{detail:{x:controls.target.x,z:controls.target.z,distance:camera.position.distanceTo(controls.target),heading:(THREE.MathUtils.radToDeg(controls.getAzimuthalAngle())+360)%360}}));}
   if(target){const distance=avatar.position.distanceTo(target);if(distance>.15){avatar.position.lerp(target,Math.min(1,dt*1.4));avatar.rotation.y=Math.atan2(target.x-avatar.position.x,target.z-avatar.position.z);if(!reduced)avatar.position.y=.35+Math.abs(Math.sin(now*.009))*.08;}else target=undefined;}
   for(const actor of inhabitants.values()){
    actor.group.visible=liveView;if(!liveView){actor.label.hidden=true;continue;}
@@ -139,7 +148,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   const distance=camera.position.distanceTo(controls.target);if(scene.fog instanceof THREE.Fog){scene.fog.near=distance+100;scene.fog.far=distance+350;}
   const occupied:{x:number;y:number;w:number;h:number}[]=[];
   const hostRect=host.getBoundingClientRect();
-  const panels=Array.from(document.querySelectorAll<HTMLElement>('.topbar,.quest-panel,.activity-panel,.mini-map,.archive-rail,.side-tools,.district-panel,.browse-panel,.bottom-area,.stage-heading'))
+  const panels=Array.from(document.querySelectorAll<HTMLElement>('.topbar,.quest-panel,.activity-panel,.mini-map,.archive-rail,.side-tools,.district-panel,.browse-panel,.bottom-area,.stage-heading,.navigation-hud,.camera-hud'))
    .map(el=>el.getBoundingClientRect()).filter(r=>r.width&&r.height)
    .map(r=>({left:r.left-hostRect.left,right:r.right-hostRect.left,top:r.top-hostRect.top,bottom:r.bottom-hostRect.top}));
   const sorted=[...labelItems].sort((a,b)=>Number(b.project?.id===selectedProject)-Number(a.project?.id===selectedProject));
@@ -155,9 +164,10 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   atmosphere.render(dt);
   sampleFrames++;if(now-sampleStart>=1200){host.dataset.renderFps=String(Math.round(sampleFrames*1000/(now-sampleStart)));host.dataset.drawCalls=String(renderer.info.render.calls);host.dataset.triangles=String(renderer.info.render.triangles);sampleStart=now;sampleFrames=0;}
  }
- new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);atmosphere.resize(w,h);camera.aspect=w/h;camera.clearViewOffset();home();camera.updateProjectionMatrix();}).observe(host);
+ let firstResize=true;
+ new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);atmosphere.resize(w,h);camera.aspect=w/h;camera.clearViewOffset();if(firstResize){home();firstResize=false;}camera.updateProjectionMatrix();}).observe(host);
  requestAnimationFrame(frame);
- function snapshot(save:Save,date:string){const position=camera.position.clone(),look=controls.target.clone(),aspect=camera.aspect;rebuild(save,date);camera.aspect=16/9;camera.position.set(12,69,90);controls.target.set(1,0,3);camera.updateProjectionMatrix();controls.update();renderer.setSize(240,135,false);atmosphere.resize(240,135);avatar.visible=false;residents.update(0,0,false);animals.update(0,false);pocketWeather.update(0,false);boats.update(0,false);skyline.update(0,false);const oldMarker=marker.visible;marker.visible=false;for(const a of inhabitants.values())a.group.visible=false;atmosphere.render(0);const url=renderer.domElement.toDataURL('image/webp',.75);renderer.setSize(host.clientWidth,host.clientHeight);atmosphere.resize(host.clientWidth,host.clientHeight);camera.aspect=aspect;camera.updateProjectionMatrix();avatar.visible=true;marker.visible=oldMarker;for(const a of inhabitants.values())a.group.visible=true;animals.update(performance.now()*.001,liveView);pocketWeather.update(performance.now()*.001,liveView);boats.update(performance.now()*.001,liveView);skyline.update(performance.now()*.001,liveView);camera.position.copy(position);controls.target.copy(look);controls.update();return url;}
+ function snapshot(save:Save,date:string){const position=camera.position.clone(),look=controls.target.clone(),aspect=camera.aspect;rebuild(save,date);camera.aspect=16/9;camera.position.set(12,69,90);controls.target.set(1,0,3);camera.updateProjectionMatrix();controls.update();renderer.setSize(240,135,false);atmosphere.resize(240,135);avatar.visible=false;residents.update(0,0,false);animals.update(0,false);pocketWeather.update(0,false);boats.update(0,false);const oldMarker=marker.visible;marker.visible=false;for(const a of inhabitants.values())a.group.visible=false;atmosphere.render(0);const url=renderer.domElement.toDataURL('image/webp',.75);renderer.setSize(host.clientWidth,host.clientHeight);atmosphere.resize(host.clientWidth,host.clientHeight);camera.aspect=aspect;camera.updateProjectionMatrix();avatar.visible=true;marker.visible=oldMarker;for(const a of inhabitants.values())a.group.visible=true;animals.update(performance.now()*.001,liveView);pocketWeather.update(performance.now()*.001,liveView);boats.update(performance.now()*.001,liveView);camera.position.copy(position);controls.target.copy(look);controls.update();return url;}
  void scenery.load().then(result=>{host.dataset.assetsLoaded=String(result.loaded);host.dataset.assetStatus=result.failed?'partial':'ready';host.dispatchEvent(new CustomEvent('world-assets-ready',{detail:result}));});
- return {rebuild,home,archipelago,get residentCount(){return liveView?residents.count:0;},get npcMindCount(){return liveView?residents.mindCount:0;},get animalCount(){return liveView?animals.count:0;},get weatherPocketCount(){return liveView?pocketWeather.count:0;},get boatCount(){return liveView?boats.count:0;},get skylineTowerCount(){return liveView?skyline.count:0;},focus,focusProject,clearFocus:()=>{selected=undefined;selectedProject=undefined;marker.visible=false;},setNight,setAgents,setNpcMinds,snapshot,toggleEffects:()=>{atmosphere.setEnabled(!atmosphere.enabled);return atmosphere.enabled;},zoom:(amount:number)=>{const offset=camera.position.clone().sub(controls.target).multiplyScalar(amount);offset.clampLength(12,2200);const p=controls.target.clone().add(offset);gsap.to(camera.position,{x:p.x,y:p.y,z:p.z,duration:reduced?0:.5,ease:'power2.out',overwrite:true});},toggleLabels:()=>labels.classList.toggle('labels-hidden')};
+ return {rebuild,home,archipelago,get residentCount(){return liveView?residents.count:0;},get npcMindCount(){return liveView?residents.mindCount:0;},get animalCount(){return liveView?animals.count:0;},get weatherPocketCount(){return liveView?pocketWeather.count:0;},get boatCount(){return liveView?boats.count:0;},focusPoint,focus,focusProject,clearFocus:()=>{selected=undefined;selectedProject=undefined;marker.visible=false;},setNight,setAgents,setNpcMinds,snapshot,toggleEffects:()=>{atmosphere.setEnabled(!atmosphere.enabled);return atmosphere.enabled;},zoom:(amount:number)=>{const offset=camera.position.clone().sub(controls.target).multiplyScalar(amount);offset.clampLength(controls.minDistance,controls.maxDistance);gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);camera.position.copy(controls.target).add(offset);controls.update();},rotate:(radians:number)=>{const offset=camera.position.clone().sub(controls.target).applyAxisAngle(camera.up,radians),p=controls.target.clone().add(offset);gsap.to(camera.position,{x:p.x,y:p.y,z:p.z,duration:reduced?0:.3,overwrite:true});},topView:()=>{const p=controls.target.clone();gsap.killTweensOf(camera.position);camera.position.set(p.x,p.y+camera.position.distanceTo(p),p.z+.1);controls.update();},toggleLabels:()=>labels.classList.toggle('labels-hidden')};
 }

@@ -1,0 +1,27 @@
+{
+  "id": "contribution:6e620dff-01ba-46ff-9674-bede54ae3e9d",
+  "date": "2026-09-22",
+  "title": "Free exploration camera and game HUD",
+  "summary": "Removed the neon skyline from the scene; added pointer-centered zoom, free panning, asset-relative orbit, close inspection, keyboard movement, clickable mini-map, invention navigator, compass, upgrades and settings. Camera and HUD validated in the local browser.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/camera-navigation.ts"
+  }
+}

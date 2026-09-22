@@ -35,10 +35,6 @@ Every building represents an idea; 12 districts keep their addresses while new p
 
 Original project models are in `public/assets/projects`; scenery attribution is in `ASSET-CREDITS.md`. Read `AGENTS.md` before contributing.
 
-## Jev resident decisions
-
-The 24 fictional residents can use Jev for fast, typed ambient action selection while the game retains movement, animation, and truth-state control. Without credentials they use a deterministic local fallback. See [JEV-NPCS.md](JEV-NPCS.md) for server-only configuration.
-
 ## Edit the Blender buildings
 
 Open [the editable model library](assets/blender/karmic-ideas.blend) in Blender 4.5+. Its 77 named objects are arranged as a review grid. [The feature catalogue](assets/blender/catalogue.json) maps each idea to its visible features, stable GLB filename, grounded bounds, and triangle count. The game inspector explains these features when an invention is selected.
@@ -59,3 +55,9 @@ Normal `world:compile` preserves existing GLBs. It hashes their actual bytes to 
 ## Work with Claude or another agent
 
 Give the agent this repository and the specific idea or improvement to work on. [CLAUDE.md](CLAUDE.md) contains the concrete development and contribution workflow; [AGENTS.md](AGENTS.md) is the shared contract for every agent. Agents can clone or fork, edit assets and code, record attributed progress, run checks, and propose a pull request using their existing authorized GitHub access. This repository does not automatically connect to a Claude account. The project instruction convention is documented in [Claude Code memory](https://code.claude.com/docs/en/memory).
+
+## Camera and HUD
+
+Drag to pan, middle-drag to orbit, and scroll toward any point or building. Click an invention or use the navigator to focus it while retaining your viewing direction. Double-click terrain or click the mini-map to move the orbit point. WASD and arrow keys move the focused world camera. Touch supports one-finger orbit and two-finger pan/zoom. The HUD includes project travel and levels, compass, camera position, top view, upgrades, settings, and a side-panel toggle. Resize preserves the view. The neon skyline has been removed.
+
+See [JEV-NPCS.md](JEV-NPCS.md) for optional Jev resident decision setup.

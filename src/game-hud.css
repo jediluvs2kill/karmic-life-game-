@@ -1,0 +1,21 @@
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.navigation-hud,.camera-hud{position:absolute;z-index:6;left:50%;transform:translateX(-50%);color:#e5f4ef}
+.navigation-hud{top:123px;display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #63949c91;border-radius:9px;background:#092735e8;box-shadow:0 8px 24px #00142035;max-width:calc(100% - 430px)}
+.navigation-hud label{min-width:0;flex:1;margin:0}.navigation-hud select{width:250px;max-width:100%;font-size:11px;margin:0;border:0;background:transparent;padding:8px 3px;color:#fff0c6;text-overflow:ellipsis}
+.hud-mode{font-size:8px;font-weight:800;letter-spacing:1.1px;color:#7be6cb;padding:0 5px}
+.navigation-hud button,.camera-hud button{border:1px solid #54798480;background:#183f50;color:#d5eee9;border-radius:5px;min-width:28px;height:29px;padding:0 6px;cursor:pointer;font-size:17px}
+.navigation-hud button:hover,.camera-hud button:hover{color:#fff0ad;border-color:#f6d58a;background:#315867}.navigation-hud button:disabled{opacity:.35;cursor:default}
+.camera-hud{bottom:97px;text-align:center;max-width:calc(100% - 420px)}
+.camera-instruments{display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 9px;border:1px solid #63949c91;background:#092735ed;border-radius:9px;box-shadow:0 5px 20px #00162040}
+.heading-dial{width:34px;flex:none}.heading-dial b{display:block;color:#8fecdd;font-size:12px;line-height:13px}.heading-dial span{font:9px monospace;color:#e0d29f}
+.camera-position,.camera-distance{white-space:nowrap;font:10px monospace;color:#d7e6e8;padding:0 4px}.camera-distance{color:#88e1ca}
+.camera-hud p{margin:7px 0 0;font:8px Manrope,sans-serif;letter-spacing:.4px;color:#e2cc98;white-space:nowrap;text-shadow:0 1px 4px #001625}.camera-hud p span{color:#d3e8ea;letter-spacing:0}
+.archive-rail nav button{min-width:55px}.archive-rail nav{gap:4px}.archive-rail{max-width:calc(100% - 30px)}
+.hud-minimal .quest-panel,.hud-minimal .activity-panel,.hud-minimal .mini-map,.hud-minimal .civilization-note{display:none}
+.mini-map svg{cursor:crosshair}.mini-map [data-map-project]{cursor:pointer;fill:#ead394;stroke:#10374a;stroke-width:.6}.mini-map [data-map-project]:hover,.mini-map [data-map-project]:focus{fill:#fff;stroke:#fff;outline:none}
+.camera-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.camera-settings button{padding:12px}.control-guide{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;font-size:12px;line-height:1.5}.control-guide dt{color:#f0d79e}.control-guide dd{margin:0;color:#d5e5e4}
+.archive-open .navigation-hud{display:none}.archive-open .camera-hud{display:none}
+.world canvas:focus-visible{outline:1px solid #81dccc88;outline-offset:-3px}
+.inspecting .activity-panel{display:none}.district-panel{right:14px;top:184px;bottom:157px;width:290px}.hud-minimal .district-panel{display:none}
+@media(max-width:1100px){.navigation-hud,.camera-hud{max-width:calc(100% - 360px)}.hud-mode{display:none}.navigation-hud select{width:205px}.camera-instruments{gap:3px;padding:5px}.camera-distance{display:none}.camera-hud p{font-size:7px}}
+@media(max-width:700px){.navigation-hud{top:151px;max-width:calc(100% - 26px);width:330px}.camera-hud{bottom:92px;max-width:calc(100% - 80px);width:300px}.camera-position{font-size:9px}.camera-hud p{display:none}.camera-instruments{gap:4px}.archive-rail nav{overflow-x:auto;justify-content:flex-start}.archive-rail nav button{flex:none;min-width:51px;padding:6px 4px}.camera-settings{grid-template-columns:1fr}.district-panel{bottom:140px}.navigation-hud select{width:220px}}
