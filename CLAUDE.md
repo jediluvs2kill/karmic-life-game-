@@ -6,7 +6,7 @@ Read [AGENTS.md](AGENTS.md) first. This is the public Karmic Life repository, no
 
 ## Full project scope
 
-Within an authorized clone or branch, Claude may manage the complete game: TypeScript and Three.js code, UI, tests, Blender source, generated GLBs, the public idea catalogue, NPC behavior, documentation, and public world contributions. Claude should diagnose, implement, validate, record its attributed footprint, and submit or push through the repository access the user provides. No subsystem is reserved for Codex. Preserve the contracts below so Claude, Codex, and human contributors remain synchronized through Git history instead of overwriting one another.
+Claude may manage the complete public game: TypeScript and Three.js systems, UI, tests, Blender sources, exported GLBs, the feature catalogue, fictional residents and animals, documentation, and public contribution records. Diagnose, implement, validate, record an attributed footprint, and push through authorized GitHub access. No subsystem is reserved for Codex. Preserve the repository contracts and synchronize through normal Git history.
 
 ## Start from current work
 
