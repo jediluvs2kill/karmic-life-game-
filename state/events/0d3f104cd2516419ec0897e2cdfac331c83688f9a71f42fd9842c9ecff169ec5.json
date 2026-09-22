@@ -1,0 +1,27 @@
+{
+  "id": "contribution:71433f09-8289-4ed7-a35f-85adfa72597e",
+  "date": "2026-09-22",
+  "title": "Fantasy fleets in the southern bay",
+  "summary": "Added six uniquely shaped roaming warboats in two fictional fleets, visible southern sea patrols, and non-destructive magical projectile exchanges.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/fantasy-boats.ts"
+  }
+}

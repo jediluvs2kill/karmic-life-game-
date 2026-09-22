@@ -6,6 +6,7 @@ import {projectsAt} from '../src/projects.ts';
 import {buildLandscape} from '../src/landscape.ts';
 import {createAnimeAnimals,planAnimeAnimals,sampleAnimeAnimal} from '../src/anime-animals.ts';
 import {createWeatherPockets,sampleWeatherParticle,weatherPockets} from '../src/weather-pockets.ts';
+import {createFantasyBoats,fantasyFleet,sampleBoat,sampleFleetVolley} from '../src/fantasy-boats.ts';
 
 const projects=projectsAt({events:inventionEvents},'2026-09-22');
 const walkable=buildLandscape(projects,()=>{},()=>true);
@@ -46,4 +47,24 @@ test('five localized weather pockets animate independently and respect reduced m
  const scene=new THREE.Scene(),weather=createWeatherPockets(scene,{reducedMotion:true});assert.equal(weather.count,5);
  assert.equal(scene.children[0].children.length,5);assert.equal(scene.children[0].userData.truthState,'FANTASY_WORLD');
  weather.update(25,false);assert.equal(scene.children[0].visible,false);weather.dispose();assert.equal(scene.children.length,0);
+});
+
+test('six uniquely shaped fantasy boats patrol open water and exchange magical volleys',()=>{
+ assert.equal(fantasyFleet.length,6);assert.equal(new Set(fantasyFleet.map(boat=>boat.kind)).size,6);assert.equal(new Set(fantasyFleet.map(boat=>boat.name)).size,6);
+ assert.deepEqual(new Set(fantasyFleet.map(boat=>boat.fleet)),new Set(['azure','coral']));
+ for(const boat of fantasyFleet){
+  assert.deepEqual(sampleBoat(boat,0,true),sampleBoat(boat,200,true));
+  for(let time=0;time<200;time+=3.7){const pose=sampleBoat(boat,time);assert.ok(pose.z>40,'Boat entered the island instead of staying in the southern sea lanes');assert.ok(Math.abs(pose.x)<=34.01);assert.ok(Object.values(pose).every(Number.isFinite));}
+ }
+ assert.equal(sampleFleetVolley(12).length,6);assert.deepEqual(sampleFleetVolley(12,true),[]);
+ for(const bolt of sampleFleetVolley(999))assert.ok(Object.values(bolt).every(value=>typeof value==='string'||Number.isFinite(value)));
+});
+
+test('the complete fantasy fleet shares a compact render budget',()=>{
+ const scene=new THREE.Scene(),boats=createFantasyBoats(scene,{reducedMotion:true});assert.equal(boats.count,6);
+ const group=scene.children[0];assert.equal(group.userData.truthState,'FANTASY_WORLD');assert.ok(group.children.length<=8);
+ assert.ok(group.children.slice(0,-1).every(child=>child instanceof THREE.InstancedMesh));
+ const before=group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array));boats.update(80,true);
+ assert.deepEqual(group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array)),before);
+ boats.update(81,false);assert.equal(group.visible,false);boats.dispose();assert.equal(scene.children.length,0);
 });

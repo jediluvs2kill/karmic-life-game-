@@ -10,6 +10,7 @@ public/project-assets.json
 *.tmp
 *.blend1
 *.blend2
+ChatGPT Image *.jpg
 
 .env
 .env.*
