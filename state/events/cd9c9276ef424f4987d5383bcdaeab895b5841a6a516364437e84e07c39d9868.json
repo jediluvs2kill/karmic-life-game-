@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:gravity-rail",
+  "date": "2026-09-22",
+  "title": "Gravity Logistics Railway",
+  "summary": "A gravity logistics station combines elevated cargo tracks and lift towers.",
+  "zone": "transit",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "gravity-rail",
+    "name": "Gravity Logistics Railway",
+    "zone": "transit",
+    "plot": 0,
+    "motif": "logistics",
+    "links": [
+      "webuild",
+      "automation-economics"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

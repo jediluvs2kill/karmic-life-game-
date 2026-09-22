@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:we-news",
+  "date": "2026-09-22",
+  "title": "WE News Global",
+  "summary": "A newsroom tower carries a globe and broadcast displays.",
+  "zone": "knowledge",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "we-news",
+    "name": "WE News Global",
+    "zone": "knowledge",
+    "plot": 0,
+    "motif": "network",
+    "links": [
+      "ministers",
+      "knowledge-film"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

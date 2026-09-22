@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:gamer-passport",
+  "date": "2026-09-22",
+  "title": "Gamer Passport",
+  "summary": "A passport gateway celebrates persistent player identity.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "gamer-passport",
+    "name": "Gamer Passport",
+    "zone": "creative",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "games-vault",
+      "character-studio"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

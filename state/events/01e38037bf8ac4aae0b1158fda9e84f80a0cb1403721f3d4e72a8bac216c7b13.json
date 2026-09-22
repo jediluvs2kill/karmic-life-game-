@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:era-skins",
+  "date": "2026-09-22",
+  "title": "Era Skins",
+  "summary": "A costume and character pavilion presents contrasting visual eras.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "era-skins",
+    "name": "Era Skins",
+    "zone": "creative",
+    "plot": 11,
+    "motif": "media",
+    "links": [
+      "character-studio",
+      "ghibliface"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:green-lab",
+  "date": "2026-09-22",
+  "title": "Green Tech Lab",
+  "summary": "A garden laboratory combines vegetation and environmental instruments.",
+  "zone": "wind",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "green-lab",
+    "name": "Green Tech Lab",
+    "zone": "wind",
+    "plot": 1,
+    "motif": "garden",
+    "links": [
+      "plastic-recycler",
+      "circular-materials",
+      "wake-recoverability"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

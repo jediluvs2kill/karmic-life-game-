@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:smoking-freedom",
+  "date": "2026-09-22",
+  "title": "Smoking Freedom",
+  "summary": "A freedom garden uses an open gateway and clear-air planting.",
+  "zone": "health",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "smoking-freedom",
+    "name": "Smoking Freedom",
+    "zone": "health",
+    "plot": 6,
+    "motif": "garden",
+    "links": [
+      "bong-tracker",
+      "distributed-self"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

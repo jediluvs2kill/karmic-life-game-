@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:karmic-life",
+  "date": "2026-09-22",
+  "title": "Karmic Life / Civilization OS",
+  "summary": "A civilization command landmark joins the surrounding idea districts.",
+  "zone": "home",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

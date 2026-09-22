@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:body-metrics",
+  "date": "2026-09-22",
+  "title": "Karmic Body Metrics",
+  "summary": "A body-scan studio with a measurement arch and anatomical display.",
+  "zone": "health",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "body-metrics",
+    "name": "Karmic Body Metrics",
+    "zone": "health",
+    "plot": 0,
+    "motif": "health",
+    "links": [
+      "kinetics",
+      "run-dna"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

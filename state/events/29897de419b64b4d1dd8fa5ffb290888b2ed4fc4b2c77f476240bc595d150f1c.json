@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:robotics-core",
+  "date": "2026-09-22",
+  "title": "Universal Smartphone Robotics Core",
+  "summary": "A robotics hangar surrounds a smartphone dock with robot platforms.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "robotics-core",
+    "name": "Universal Smartphone Robotics Core",
+    "zone": "maker",
+    "plot": 4,
+    "motif": "robot",
+    "links": [
+      "machine-bridge",
+      "kinetics",
+      "edge-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

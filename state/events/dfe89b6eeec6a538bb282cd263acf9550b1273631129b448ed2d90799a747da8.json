@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:keltech-avatars",
+  "date": "2026-09-22",
+  "title": "Keltech Employee Avatars",
+  "summary": "An avatar gallery displays a recurring ensemble of character portraits.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "keltech-avatars",
+    "name": "Keltech Employee Avatars",
+    "zone": "creative",
+    "plot": 7,
+    "motif": "media",
+    "links": [
+      "character-studio",
+      "brand-studio"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "contribution:a4016d98-c836-4ff6-897c-a49d2ef3d7f1",
+  "date": "2026-09-22",
+  "title": "Blender idea world and public agent repository",
+  "summary": "Prepared the public 77-idea civilization with original editable Blender assets, concept-specific feature descriptions, corrected lighting, stable model cache revisions, an isolated public server and storage key, and explicit publication notices. No private conversation history is included. The production build and all 23 tests passed. These artifacts are fantasy representations, not validated physical inventions.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "prototype",
+    "evidence": "scripts/blender/build_assets.py; assets/blender/karmic-ideas.blend; tests/civilization.test.ts; tests/public-boundary.test.ts; npm test: 23 passing; npm run build: passed"
+  }
+}

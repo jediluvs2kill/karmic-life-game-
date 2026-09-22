@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:brand-studio",
+  "date": "2026-09-22",
+  "title": "Karmic Brand Studio",
+  "summary": "A creative brand workshop with a display wall and color samples.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "brand-studio",
+    "name": "Karmic Brand Studio",
+    "zone": "creative",
+    "plot": 6,
+    "motif": "media",
+    "links": [
+      "reels-studio",
+      "review-pages"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:aic-ecosystem",
+  "date": "2026-09-22",
+  "title": "AIC Living Startup Ecosystem",
+  "summary": "An incubator campus connects startup pavilions around a shared courtyard.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "aic-ecosystem",
+    "name": "AIC Living Startup Ecosystem",
+    "zone": "business",
+    "plot": 1,
+    "motif": "network",
+    "links": [
+      "webuild",
+      "investor-portal"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

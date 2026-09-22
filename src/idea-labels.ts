@@ -1,0 +1,75 @@
+import {landmarks} from './civilization.ts';
+import type {LivingProject} from './projects.ts';
+
+/** Human-readable place identities; these never change saved project addresses. */
+export const ideaSubtitles:Record<string,string>={
+ 'body-metrics':'See the body. Measure change.',
+ 'bong-tracker':'Patterns across time',
+ kinetics:'Movement becomes understanding',
+ rigpulse:'Your machine, in your pocket',
+ 'aic-ecosystem':'Startups grow together',
+ 'karmic-cameras':'Local eyes. Local intelligence.',
+ 'games-vault':'One home for every game',
+ 'gamer-passport':'Your identity across worlds',
+ 'character-studio':'Give imagination a character',
+ 'reels-studio':'Small films. New possibilities.',
+ 'we-news':'Many perspectives on one world',
+ wraithwave:'A playground for sound',
+ ghibliface:'Portraits with a new perspective',
+ 'finance-os':'Understand the money story',
+ 'legal-os':'Knowledge with a foundation',
+ 'brand-studio':'Give every idea an identity',
+ 'investor-portal':'Connect capital and curiosity',
+ 'talent-os':'People meet possibilities',
+ 'ip-vault':'A home for original thinking',
+ analytics:'Turn patterns into questions',
+ 'api-gateway':'Connect the moving parts',
+ webuild:'A meeting place for makers',
+ 'circular-materials':'Waste becomes a beginning',
+ 'rf-tattoos':'Exploring wearable signals',
+ 'green-lab':'Experiment for a greener world',
+ 'sanskrit-agi':'Language as a structure',
+ 'plastic-recycler':'Sunlight. Plastic. New forms.',
+ 'capture-memory':'Keep the sparks of an idea',
+ 'edge-core':'Small devices. Shared thinking.',
+ sync:'Let the room join the screen',
+ 'spatial-engine':'Your gestures shape the interface',
+ rwa:'A community that participates',
+ 'pet-comfort':'Room for our companions',
+ 'rope-storage':'Less material. More possibility.',
+ 'magnetic-iron':'Exploring a lighter press',
+ 'personality-elements':'People, bonds, and change',
+ 'automation-economics':'Make the tradeoffs visible',
+ 'wake-recoverability':'Find questions inside the wake',
+ 'keltech-avatars':'A familiar team, a new form',
+ 'chase-tag':'Run. Dodge. Play again.',
+ 'titanium-merch':'Wear the team spirit',
+ 'mih-hub':'An open home for invention',
+ 'experimental-vehicle':'A moving laboratory',
+ 'patent-discovery':'Discover the next possibility',
+ 'distributed-self':'Explore body, mind, and metaphor',
+ 'maker-bay':'Build it. Try it. Learn.',
+ 'machine-bridge':'Your phone meets the workshop',
+ 'star-registry':'Stories written toward the stars',
+ ludo:'A playground for new rules',
+ 'knowledge-film':'Make knowledge felt',
+ 'era-skins':'See a life through its eras',
+ 'idea-evaluation':'Good questions strengthen ideas',
+ portals:'A window into another place',
+ 'multi-ai':'Many minds. One conversation.',
+ 'robot-podcast':'A table for different minds',
+ 'compute-cluster':'Many devices working together',
+ 'ai-chess':'Explore the next move',
+ 'review-pages':'Let real voices tell the story',
+ 'time-use':'The same day. Different lives.',
+ 'smoking-freedom':'More room to choose freely',
+ 'four-log':'Whose example are we following?',
+ 'thermal-phone':'Question what a sensor can see'
+};
+
+export function ideaLabel(project:LivingProject){
+ const landmark=landmarks[project.id];
+ const summary=project.events[0]?.summary.split(/[.!?]/)[0]?.trim();
+ const fallback=summary?(summary.length>42?summary.slice(0,39).replace(/\s+\S*$/,'')+'…':summary):'A new possibility takes shape';
+ return {name:landmark?.name??project.name,subtitle:landmark?.caption??ideaSubtitles[project.id]??fallback};
+}

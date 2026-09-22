@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:run-dna",
+  "date": "2026-09-22",
+  "title": "Run DNA",
+  "summary": "A running park turns route geometry into a luminous double-helix sculpture.",
+  "zone": "health",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "run-dna",
+    "name": "Run DNA",
+    "zone": "health",
+    "plot": 3,
+    "motif": "health",
+    "links": [
+      "kinetics",
+      "body-metrics",
+      "creatine"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

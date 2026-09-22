@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:religion-earths",
+  "date": "2026-09-22",
+  "title": "Religion Earths",
+  "summary": "An observatory holds multiple miniature worlds in orbital rings.",
+  "zone": "ideas",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "religion-earths",
+    "name": "Religion Earths",
+    "zone": "ideas",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "ai-chess",
+      "ludo",
+      "we-news"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "public-catalogue:agent-swarm",
+  "date": "2026-09-22",
+  "title": "Karmic Agent Swarm",
+  "summary": "An agent command center surrounds a shared intelligence core with workstations.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "agent-swarm",
+    "name": "Karmic Agent Swarm",
+    "zone": "agents",
+    "plot": 6,
+    "motif": "robot",
+    "links": [
+      "idea-evaluation",
+      "multi-ai",
+      "karmic-life",
+      "compute-cluster"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

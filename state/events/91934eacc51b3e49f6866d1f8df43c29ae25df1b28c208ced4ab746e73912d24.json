@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:portals",
+  "date": "2026-09-22",
+  "title": "3D Portals",
+  "summary": "A pair of spatial gateways represents connected remote rooms.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "portals",
+    "name": "3D Portals",
+    "zone": "maker",
+    "plot": 14,
+    "motif": "phone",
+    "links": [
+      "spatial-engine",
+      "robotics-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

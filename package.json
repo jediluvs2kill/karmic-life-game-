@@ -1,0 +1,31 @@
+{
+  "name": "karmic-life",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/compile-world.mjs",
+    "prebuild": "node scripts/compile-world.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "world:compile": "node scripts/compile-world.mjs",
+    "world:record": "node scripts/record-work.mjs",
+    "sync": "node scripts/sync-worker.mjs --once",
+    "sync:watch": "node scripts/sync-worker.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "postprocessing": "^6.39.5",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.0",
+    "@gltf-transform/extensions": "^4.5.0",
+    "@gltf-transform/functions": "^4.5.0",
+    "@types/three": "^0.180.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
+  }
+}

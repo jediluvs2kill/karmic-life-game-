@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:cooling-stack",
+  "date": "2026-09-22",
+  "title": "Transparent Cooling Stack",
+  "summary": "A thermal laboratory displays coolant reservoirs, pipes, and radiator fins.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "cooling-stack",
+    "name": "Transparent Cooling Stack",
+    "zone": "maker",
+    "plot": 16,
+    "motif": "workshop",
+    "links": [
+      "rigpulse",
+      "maker-bay"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:plastic-recycler",
+  "date": "2026-09-22",
+  "title": "Karmic Solar Plastic Recycler",
+  "summary": "A solar recycler links panel arrays to a compact processing chamber.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "plastic-recycler",
+    "name": "Karmic Solar Plastic Recycler",
+    "zone": "maker",
+    "plot": 5,
+    "motif": "materials",
+    "links": [
+      "green-lab",
+      "circular-materials"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

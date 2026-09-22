@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:analytics",
+  "date": "2026-09-22",
+  "title": "Karmic Analytics Hub",
+  "summary": "A data observatory features charts and a central analysis instrument.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "analytics",
+    "name": "Karmic Analytics Hub",
+    "zone": "agents",
+    "plot": 0,
+    "motif": "science",
+    "links": [
+      "capture-memory",
+      "api-gateway"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

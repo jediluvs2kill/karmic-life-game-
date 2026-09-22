@@ -1,0 +1,288 @@
+{
+  "oak": {
+    "file": "oak.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "tree_oak.glb",
+    "license": "CC0-1.0",
+    "bytes": 11620,
+    "primitives": 2,
+    "size": [
+      0.52237,
+      1,
+      0.60318
+    ]
+  },
+  "birch": {
+    "file": "birch.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "tree_detailed.glb",
+    "license": "CC0-1.0",
+    "bytes": 24804,
+    "primitives": 3,
+    "size": [
+      0.63577,
+      1,
+      0.57159
+    ]
+  },
+  "pine": {
+    "file": "pine.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "tree_pineRoundC.glb",
+    "license": "CC0-1.0",
+    "bytes": 12164,
+    "primitives": 2,
+    "size": [
+      0.38343,
+      1,
+      0.44275
+    ]
+  },
+  "rock": {
+    "file": "rock.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "rock_largeA.glb",
+    "license": "CC0-1.0",
+    "bytes": 5948,
+    "primitives": 2,
+    "size": [
+      0.77296,
+      0.25582,
+      1
+    ]
+  },
+  "rockTall": {
+    "file": "rockTall.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "rock_tallA.glb",
+    "license": "CC0-1.0",
+    "bytes": 9436,
+    "primitives": 3,
+    "size": [
+      0.98709,
+      1,
+      0.68601
+    ]
+  },
+  "bush": {
+    "file": "bush.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "plant_bushDetailed.glb",
+    "license": "CC0-1.0",
+    "bytes": 7976,
+    "primitives": 1,
+    "size": [
+      1,
+      0.59815,
+      1
+    ]
+  },
+  "flowers": {
+    "file": "flowers.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "flower_purpleA.glb",
+    "license": "CC0-1.0",
+    "bytes": 5644,
+    "primitives": 2,
+    "size": [
+      0.65607,
+      1,
+      0.74664
+    ]
+  },
+  "bridge": {
+    "file": "bridge.glb",
+    "source": "https://kenney.nl/assets/nature-kit",
+    "original": "bridge_wood.glb",
+    "license": "CC0-1.0",
+    "bytes": 12436,
+    "primitives": 3,
+    "size": [
+      1,
+      0.38462,
+      1
+    ]
+  },
+  "roof": {
+    "file": "roof.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "roof-gable.glb",
+    "license": "CC0-1.0",
+    "bytes": 16652,
+    "primitives": 1,
+    "size": [
+      1,
+      0.51883,
+      0.97337
+    ]
+  },
+  "window": {
+    "file": "window.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "wall-wood-window-shutters.glb",
+    "license": "CC0-1.0",
+    "bytes": 18660,
+    "primitives": 1,
+    "size": [
+      0.1,
+      1,
+      1
+    ]
+  },
+  "door": {
+    "file": "door.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "wall-wood-door.glb",
+    "license": "CC0-1.0",
+    "bytes": 32624,
+    "primitives": 2,
+    "size": [
+      0.1,
+      1,
+      1
+    ]
+  },
+  "fountain": {
+    "file": "fountain.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "fountain-round-detail.glb",
+    "license": "CC0-1.0",
+    "bytes": 104528,
+    "primitives": 2,
+    "size": [
+      1,
+      0.24,
+      1
+    ]
+  },
+  "stall": {
+    "file": "stall.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "stall-red.glb",
+    "license": "CC0-1.0",
+    "bytes": 28216,
+    "primitives": 1,
+    "size": [
+      0.80842,
+      1,
+      0.80842
+    ]
+  },
+  "cart": {
+    "file": "cart.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "cart.glb",
+    "license": "CC0-1.0",
+    "bytes": 36812,
+    "primitives": 2,
+    "size": [
+      0.66644,
+      0.39963,
+      1
+    ]
+  },
+  "lantern": {
+    "file": "lantern.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "lantern.glb",
+    "license": "CC0-1.0",
+    "bytes": 21776,
+    "primitives": 1,
+    "size": [
+      0.13911,
+      1,
+      0.14416
+    ]
+  },
+  "bench": {
+    "file": "bench.glb",
+    "source": "https://kenney.nl/assets/fantasy-town-kit",
+    "original": "stall-bench.glb",
+    "license": "CC0-1.0",
+    "bytes": 21124,
+    "primitives": 1,
+    "size": [
+      0.2766,
+      0.2399,
+      1
+    ]
+  },
+  "ship": {
+    "file": "ship.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "ship-medium.glb",
+    "license": "CC0-1.0",
+    "bytes": 97792,
+    "primitives": 4,
+    "size": [
+      0.45283,
+      0.93995,
+      1
+    ]
+  },
+  "palm": {
+    "file": "palm.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "palm-detailed-bend.glb",
+    "license": "CC0-1.0",
+    "bytes": 46032,
+    "primitives": 1,
+    "size": [
+      0.67753,
+      1,
+      0.75648
+    ]
+  },
+  "harbourRock": {
+    "file": "harbourRock.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "rocks-a.glb",
+    "license": "CC0-1.0",
+    "bytes": 29328,
+    "primitives": 1,
+    "size": [
+      1,
+      0.56684,
+      0.85797
+    ]
+  },
+  "tower": {
+    "file": "tower.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "tower-complete-small.glb",
+    "license": "CC0-1.0",
+    "bytes": 50680,
+    "primitives": 1,
+    "size": [
+      0.49428,
+      1,
+      0.53897
+    ]
+  },
+  "barrel": {
+    "file": "barrel.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "barrel.glb",
+    "license": "CC0-1.0",
+    "bytes": 19932,
+    "primitives": 1,
+    "size": [
+      1,
+      0.91995,
+      1
+    ]
+  },
+  "crate": {
+    "file": "crate.glb",
+    "source": "https://kenney.nl/assets/pirate-kit",
+    "original": "crate.glb",
+    "license": "CC0-1.0",
+    "bytes": 16640,
+    "primitives": 1,
+    "size": [
+      0.82353,
+      0.58824,
+      1
+    ]
+  }
+}

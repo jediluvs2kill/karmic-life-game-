@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:creatine",
+  "date": "2026-09-22",
+  "title": "Karmic Creatine",
+  "summary": "A sports sampling pavilion features a sculptural dispenser beside a running track.",
+  "zone": "health",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "creatine",
+    "name": "Karmic Creatine",
+    "zone": "health",
+    "plot": 5,
+    "motif": "health",
+    "links": [
+      "run-dna",
+      "review-pages"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

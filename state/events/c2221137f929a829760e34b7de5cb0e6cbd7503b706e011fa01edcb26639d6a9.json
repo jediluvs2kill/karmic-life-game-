@@ -1,0 +1,21 @@
+{
+  "id": "public-catalogue:magnetic-iron",
+  "date": "2026-09-22",
+  "title": "Magnetic Ironing",
+  "summary": "A compact ironing laboratory showcases a magnetic pressure platform.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "magnetic-iron",
+    "name": "Magnetic Ironing",
+    "zone": "maker",
+    "plot": 9,
+    "motif": "workshop",
+    "links": [
+      "maker-bay"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

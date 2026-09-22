@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:sync",
+  "date": "2026-09-22",
+  "title": "Karmic Sync",
+  "summary": "A reactive-lighting studio surrounds a screen with colored light strips.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "sync",
+    "name": "Karmic Sync",
+    "zone": "maker",
+    "plot": 6,
+    "motif": "phone",
+    "links": [
+      "karmic-cameras",
+      "spatial-engine"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

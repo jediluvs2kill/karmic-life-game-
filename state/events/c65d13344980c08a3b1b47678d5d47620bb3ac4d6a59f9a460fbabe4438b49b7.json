@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:guru-engine",
+  "date": "2026-09-22",
+  "title": "Guru-selection Engine",
+  "summary": "A mentor temple offers branching paths toward different learning halls.",
+  "zone": "mentor",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "guru-engine",
+    "name": "Guru-selection Engine",
+    "zone": "mentor",
+    "plot": 2,
+    "motif": "network",
+    "links": [
+      "four-log",
+      "personality-elements",
+      "time-use"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

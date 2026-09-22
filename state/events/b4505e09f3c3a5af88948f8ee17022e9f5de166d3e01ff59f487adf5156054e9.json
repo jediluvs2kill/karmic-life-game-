@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:distributed-self",
+  "date": "2026-09-22",
+  "title": "Distributed Self & Human Fields",
+  "summary": "A speculative research pavilion maps interconnected biological systems.",
+  "zone": "health",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "distributed-self",
+    "name": "Distributed Self & Human Fields",
+    "zone": "health",
+    "plot": 4,
+    "motif": "science",
+    "links": [
+      "rf-tattoos",
+      "personality-elements"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

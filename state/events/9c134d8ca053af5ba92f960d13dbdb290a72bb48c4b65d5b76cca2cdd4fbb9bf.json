@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:knowledge-film",
+  "date": "2026-09-22",
+  "title": "Knowledge → Film Engine",
+  "summary": "A film laboratory translates knowledge displays into a cinema stage.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "knowledge-film",
+    "name": "Knowledge → Film Engine",
+    "zone": "creative",
+    "plot": 10,
+    "motif": "media",
+    "links": [
+      "we-news",
+      "reels-studio",
+      "distributed-self"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

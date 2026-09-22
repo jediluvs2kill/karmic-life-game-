@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:titanium-merch",
+  "date": "2026-09-22",
+  "title": "Titanium Team Merch",
+  "summary": "A merchandise atelier displays caps and fabrication equipment.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "titanium-merch",
+    "name": "Titanium Team Merch",
+    "zone": "business",
+    "plot": 9,
+    "motif": "workshop",
+    "links": [
+      "brand-studio",
+      "mih-hub"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

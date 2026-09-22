@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:capture-memory",
+  "date": "2026-09-22",
+  "title": "Karmic Capture / Memory",
+  "summary": "A memory archive gathers media tiles around a capture device.",
+  "zone": "knowledge",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "capture-memory",
+    "name": "Karmic Capture / Memory",
+    "zone": "knowledge",
+    "plot": 3,
+    "motif": "phone",
+    "links": [
+      "edge-core",
+      "analytics",
+      "karmic-life"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

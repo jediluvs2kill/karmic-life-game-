@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:robot-podcast",
+  "date": "2026-09-22",
+  "title": "AI Robot Podcast",
+  "summary": "A podcast stage pairs robot hosts with microphones and phone faces.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "robot-podcast",
+    "name": "AI Robot Podcast",
+    "zone": "creative",
+    "plot": 12,
+    "motif": "robot",
+    "links": [
+      "character-studio",
+      "multi-ai",
+      "robotics-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

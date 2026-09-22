@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:mih-hub",
+  "date": "2026-09-22",
+  "title": "MIH Innovation Hub",
+  "summary": "An invention campus combines demonstration bays and a public exhibition space.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "mih-hub",
+    "name": "MIH Innovation Hub",
+    "zone": "maker",
+    "plot": 10,
+    "motif": "workshop",
+    "links": [
+      "windpanel",
+      "chase-tag",
+      "patent-discovery"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

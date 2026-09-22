@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:webuild",
+  "date": "2026-09-22",
+  "title": "WeBuild India",
+  "summary": "A maker construction yard with structural frames and workshop bays.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "webuild",
+    "name": "WeBuild India",
+    "zone": "business",
+    "plot": 6,
+    "motif": "workshop",
+    "links": [
+      "maker-bay",
+      "aic-ecosystem",
+      "circular-materials"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

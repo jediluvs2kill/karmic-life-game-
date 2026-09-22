@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:experimental-vehicle",
+  "date": "2026-09-22",
+  "title": "Experimental Vehicle Lab",
+  "summary": "A vehicle laboratory presents a futuristic chassis on a test platform.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "experimental-vehicle",
+    "name": "Experimental Vehicle Lab",
+    "zone": "maker",
+    "plot": 11,
+    "motif": "robot",
+    "links": [
+      "windpanel",
+      "robotics-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

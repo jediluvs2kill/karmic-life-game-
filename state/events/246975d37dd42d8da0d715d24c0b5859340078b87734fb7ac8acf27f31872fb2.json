@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:compute-cluster",
+  "date": "2026-09-22",
+  "title": "Personal Distributed Compute",
+  "summary": "A distributed computing hall links server nodes and personal devices.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "compute-cluster",
+    "name": "Personal Distributed Compute",
+    "zone": "agents",
+    "plot": 5,
+    "motif": "network",
+    "links": [
+      "edge-core",
+      "rigpulse",
+      "maker-bay"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

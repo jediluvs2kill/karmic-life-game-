@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:ludo",
+  "date": "2026-09-22",
+  "title": "4D Ludo & Indian Game Lab",
+  "summary": "An experimental board-game pavilion turns a game board into a miniature world.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "ludo",
+    "name": "4D Ludo & Indian Game Lab",
+    "zone": "creative",
+    "plot": 9,
+    "motif": "game",
+    "links": [
+      "games-vault",
+      "religion-earths"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

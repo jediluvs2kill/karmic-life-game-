@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:windpanel",
+  "date": "2026-09-22",
+  "title": "WindPanel",
+  "summary": "An aerodynamic vehicle-energy laboratory with a ducted rotor test bay.",
+  "zone": "wind",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "windpanel",
+    "name": "WindPanel",
+    "zone": "wind",
+    "plot": 0,
+    "motif": "energy",
+    "links": [
+      "wake-recoverability",
+      "solar-sales",
+      "mih-hub"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

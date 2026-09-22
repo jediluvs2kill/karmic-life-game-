@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:idea-evaluation",
+  "date": "2026-09-22",
+  "title": "Idea Evaluation Engine",
+  "summary": "An evaluation laboratory puts concepts between opposing analysis stations.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "idea-evaluation",
+    "name": "Idea Evaluation Engine",
+    "zone": "agents",
+    "plot": 3,
+    "motif": "science",
+    "links": [
+      "agent-swarm",
+      "ip-vault",
+      "karmic-life"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

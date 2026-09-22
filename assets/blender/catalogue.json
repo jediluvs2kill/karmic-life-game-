@@ -1,0 +1,2398 @@
+{
+  "version": 3,
+  "artRevision": 4,
+  "truthState": "FANTASY_WORLD",
+  "artDirection": "Architectural models with radiused edges, smooth formed surfaces, framed glazing, construction details and restrained diffuse materials.",
+  "provenance": "Original Blender geometry authored for the user's invention inventory. No third-party assets or model APIs.",
+  "recipe": "scripts/blender/build_assets.py",
+  "generator": "Blender",
+  "models": [
+    {
+      "projectId": "body-metrics",
+      "name": "Karmic Body Metrics",
+      "asset": "assets/projects/idea-ebaa9c8d.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A figure in a photographic scan frame, a weight scale, and regional horizontal measurement lines."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "body-metrics",
+        "summary": "A figure in a photographic scan frame, a weight scale, and regional horizontal measurement lines."
+      },
+      "triangles": 2680,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.7250001430511475,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "webroker",
+      "name": "Webroker",
+      "asset": "assets/projects/idea-78cffac8.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three connected broker towers meet a shared intent promenade; visible links express matching instead of listings."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "webroker",
+        "summary": "Three connected broker towers meet a shared intent promenade; visible links express matching instead of listings."
+      },
+      "triangles": 14416,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.7189998626708984,
+          2.049999952316284
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "windpanel",
+      "name": "WindPanel",
+      "asset": "assets/projects/idea-ec476d1f.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A testing bus with a shallow rooftop inlet, enclosed rotors, and curved wake-flow ribbons."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "windpanel",
+        "summary": "A testing bus with a shallow rooftop inlet, enclosed rotors, and curved wake-flow ribbons."
+      },
+      "triangles": 9444,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.453711748123169,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "bong-tracker",
+      "name": "Bong-shot Data Tracker",
+      "asset": "assets/projects/idea-c708d384.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A one-tap journal phone faces a radial frequency landscape and session timeline."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "bong-tracker",
+        "summary": "A one-tap journal phone faces a radial frequency landscape and session timeline."
+      },
+      "triangles": 3432,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.5,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "kinetics",
+      "name": "Karmic Motion Intelligence",
+      "asset": "assets/projects/idea-9d91aa25.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A joint-marked motion figure, surrounding pose arc, wearable watch dock, and movement screen."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "kinetics",
+        "summary": "A joint-marked motion figure, surrounding pose arc, wearable watch dock, and movement screen."
+      },
+      "triangles": 3308,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.7749998569488525,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "rigpulse",
+      "name": "RigPulse / Predator Sense",
+      "asset": "assets/projects/idea-59662f82.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open telemetry laptop with fan grilles streams colored sensor bars to a companion phone."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "rigpulse",
+        "summary": "An open telemetry laptop with fan grilles streams colored sensor bars to a companion phone."
+      },
+      "triangles": 1832,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.299999952316284,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "aic-ecosystem",
+      "name": "AIC Living Startup Ecosystem",
+      "asset": "assets/projects/idea-a46c4a35.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A living tree connects six startup pavilions across an incubator ecosystem."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "aic-ecosystem",
+        "summary": "A living tree connects six startup pavilions across an incubator ecosystem."
+      },
+      "triangles": 4696,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          3.2100000381469727,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "karmic-cameras",
+      "name": "Karmic Cameras",
+      "asset": "assets/projects/idea-459f3a7d.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Two purpose-built security cameras with visible lenses connect to a local inference appliance."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "karmic-cameras",
+        "summary": "Two purpose-built security cameras with visible lenses connect to a local inference appliance."
+      },
+      "triangles": 4536,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.0,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "games-vault",
+      "name": "Karmic Games Vault",
+      "asset": "assets/projects/idea-6958ee05.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A circular vault door protects shared game assets, flanked by achievement trophies."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "games-vault",
+        "summary": "A circular vault door protects shared game assets, flanked by achievement trophies."
+      },
+      "triangles": 4456,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.3999998569488525,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "gamer-passport",
+      "name": "Gamer Passport",
+      "asset": "assets/projects/idea-29f67590.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A standing passport with avatar and history lines connects three game identity stamps."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "gamer-passport",
+        "summary": "A standing passport with avatar and history lines connects three game identity stamps."
+      },
+      "triangles": 2496,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.7200000286102295,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "character-studio",
+      "name": "AI Character Studio",
+      "asset": "assets/projects/idea-ba3674fd.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three character turntables and an avatar control display form a reusable creation stage."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "character-studio",
+        "summary": "Three character turntables and an avatar control display form a reusable creation stage."
+      },
+      "triangles": 3444,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.5,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "reels-studio",
+      "name": "Karmic Reels Studio",
+      "asset": "assets/projects/idea-168b1b77.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A portrait-format recording stage has two softbox lamps and a vertical video screen."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "reels-studio",
+        "summary": "A portrait-format recording stage has two softbox lamps and a vertical video screen."
+      },
+      "triangles": 2964,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.0299999713897705,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "we-news",
+      "name": "WE News Global",
+      "asset": "assets/projects/idea-c28607db.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A world globe and transmission ring rise over a newsroom with paired news screens."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "we-news",
+        "summary": "A world globe and transmission ring rise over a newsroom with paired news screens."
+      },
+      "triangles": 4904,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          2.84060001373291,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "wraithwave",
+      "name": "WraithWave / MixerWave",
+      "asset": "assets/projects/idea-cd89f6af.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A waveform facade and paired speaker stacks make an experimental audio mixing pavilion."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "wraithwave",
+        "summary": "A waveform facade and paired speaker stacks make an experimental audio mixing pavilion."
+      },
+      "triangles": 4716,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.0250000953674316,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "ghibliface",
+      "name": "GhibliFace AI",
+      "asset": "assets/projects/idea-e322bab3.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Stylized character turntables sit inside a golden transformation frame and soft organic planting."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "ghibliface",
+        "summary": "Stylized character turntables sit inside a golden transformation frame and soft organic planting."
+      },
+      "triangles": 5160,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.819999933242798,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "finance-os",
+      "name": "Karmic Finance OS",
+      "asset": "assets/projects/idea-786adf8a.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A financial planning hall pairs coin-like ledger stacks with a planning curve, without asserting real wealth."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "finance-os",
+        "summary": "A financial planning hall pairs coin-like ledger stacks with a planning curve, without asserting real wealth."
+      },
+      "triangles": 6400,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.951668620109558,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "legal-os",
+      "name": "Karmic Legal OS",
+      "asset": "assets/projects/idea-0dfcc8b7.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A balanced pair of legal scales stands in front of an open colonnade and a reference volume."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "legal-os",
+        "summary": "A balanced pair of legal scales stands in front of an open colonnade and a reference volume."
+      },
+      "triangles": 4008,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.450000047683716,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "brand-studio",
+      "name": "Karmic Brand Studio",
+      "asset": "assets/projects/idea-3e3c33cf.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An identity board rises over an organized palette of pigment drums."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "brand-studio",
+        "summary": "An identity board rises over an organized palette of pigment drums."
+      },
+      "triangles": 4204,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.0250000953674316,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "investor-portal",
+      "name": "Karmic Investor Portal",
+      "asset": "assets/projects/idea-315b95be.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A large gateway opens onto four venture growth plots, depicting discovery and investment pathways."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "investor-portal",
+        "summary": "A large gateway opens onto four venture growth plots, depicting discovery and investment pathways."
+      },
+      "triangles": 2664,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.0799996852874756,
+          2.049999952316284
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "talent-os",
+      "name": "Karmic Talent OS",
+      "asset": "assets/projects/idea-7016b9bc.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open talent forum connects three distinct people through visible skill-matching routes."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "talent-os",
+        "summary": "An open talent forum connects three distinct people through visible skill-matching routes."
+      },
+      "triangles": 5080,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.359499931335449,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "ip-vault",
+      "name": "Karmic IP & Patent Vault",
+      "asset": "assets/projects/idea-b71da145.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A structured archive has visible patent drawers and an invention seal, giving intellectual property a home."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "ip-vault",
+        "summary": "A structured archive has visible patent drawers and an invention seal, giving intellectual property a home."
+      },
+      "triangles": 3024,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.134999990463257,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "analytics",
+      "name": "Karmic Analytics Hub",
+      "asset": "assets/projects/idea-5c10448b.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Four data towers and a linked trend trace sit behind three analysis consoles."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "analytics",
+        "summary": "Four data towers and a linked trend trace sit behind three analysis consoles."
+      },
+      "triangles": 1924,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.990000009536743,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "api-gateway",
+      "name": "Karmic API Gateway",
+      "asset": "assets/projects/idea-d1372690.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A traversable monumental gateway connects six endpoint routes through a shared interface."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "api-gateway",
+        "summary": "A traversable monumental gateway connects six endpoint routes through a shared interface."
+      },
+      "triangles": 2900,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.254999876022339,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "webuild",
+      "name": "WeBuild India",
+      "asset": "assets/projects/idea-66e24dd7.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A shared makers yard combines a construction crane, workshop truss, and reusable building modules."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "webuild",
+        "summary": "A shared makers yard combines a construction crane, workshop truss, and reusable building modules."
+      },
+      "triangles": 3876,
+      "bounds": {
+        "min": [
+          -2.5,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.015000104904175,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "circular-materials",
+      "name": "HDHMR Circular Materials",
+      "asset": "assets/projects/idea-309ffd47.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Waste feedstock enters an extrusion line and emerges as two large printable filament spools."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "circular-materials",
+        "summary": "Waste feedstock enters an extrusion line and emerges as two large printable filament spools."
+      },
+      "triangles": 4864,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.75,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "rf-tattoos",
+      "name": "Wi-Fi Reflective Tattoos",
+      "asset": "assets/projects/idea-c7ea258e.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A curved wearable surface carries concentric conductive traces beside an RF measurement reader."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "rf-tattoos",
+        "summary": "A curved wearable surface carries concentric conductive traces beside an RF measurement reader."
+      },
+      "triangles": 1884,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.2199997901916504,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "green-lab",
+      "name": "Green Tech Lab",
+      "asset": "assets/projects/idea-7a2a9b42.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A framed greenhouse laboratory combines plants, a solar roof, and a small experiment vessel."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "green-lab",
+        "summary": "A framed greenhouse laboratory combines plants, a solar roof, and a small experiment vessel."
+      },
+      "triangles": 6690,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.3672001361846924,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "sanskrit-agi",
+      "name": "Karmic Sanskrit AGI",
+      "asset": "assets/projects/idea-92210d64.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Reference volumes support a radial grammar wheel whose connected nodes represent language structures."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "sanskrit-agi",
+        "summary": "Reference volumes support a radial grammar wheel whose connected nodes represent language structures."
+      },
+      "triangles": 4120,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          2.9649999141693115,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "robotics-core",
+      "name": "Universal Smartphone Robotics Core",
+      "asset": "assets/projects/idea-d9ab190c.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A phone-equipped quadcopter shares a hangar with a phone rover and small boat."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "robotics-core",
+        "summary": "A phone-equipped quadcopter shares a hangar with a phone rover and small boat."
+      },
+      "triangles": 6904,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.7395000457763672,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "plastic-recycler",
+      "name": "Karmic Solar Plastic Recycler",
+      "asset": "assets/projects/idea-c29fdc3f.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A photovoltaic roof powers a compact recycling chamber connected to sorted output blocks."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "plastic-recycler",
+        "summary": "A photovoltaic roof powers a compact recycling chamber connected to sorted output blocks."
+      },
+      "triangles": 1948,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.7944999933242798,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "capture-memory",
+      "name": "Karmic Capture / Memory",
+      "asset": "assets/projects/idea-c7325407.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Captured documents flow from a phone into a library of persistent memory drawers."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "capture-memory",
+        "summary": "Captured documents flow from a phone into a library of persistent memory drawers."
+      },
+      "triangles": 1468,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.3499999046325684,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "edge-core",
+      "name": "Karmic Edge + Core",
+      "asset": "assets/projects/idea-b7ca5208.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A home reasoning server connects a phone and a watch as personal edge nodes."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "edge-core",
+        "summary": "A home reasoning server connects a phone and a watch as personal edge nodes."
+      },
+      "triangles": 4436,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.3399999141693115,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "sync",
+      "name": "Karmic Sync",
+      "asset": "assets/projects/idea-097acf9a.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A large television is surrounded by color-reactive edge lighting, watched by a dedicated camera puck."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "sync",
+        "summary": "A large television is surrounded by color-reactive edge lighting, watched by a dedicated camera puck."
+      },
+      "triangles": 2228,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.609999895095825,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "spatial-engine",
+      "name": "Karmic Spatial Interaction Engine",
+      "asset": "assets/projects/idea-d3a22fb0.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A tall phone is framed by articulated gesture hands, an interaction boundary, and a stylus."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "spatial-engine",
+        "summary": "A tall phone is framed by articulated gesture hands, an interaction boundary, and a stylus."
+      },
+      "triangles": 1760,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.434999704360962,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "rwa",
+      "name": "RWA Predictive Governance",
+      "asset": "assets/projects/idea-29d1ca65.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three apartment blocks face a shared resident council table and a circular participation ledger."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "rwa",
+        "summary": "Three apartment blocks face a shared resident council table and a circular participation ledger."
+      },
+      "triangles": 5864,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.515500068664551,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "pet-comfort",
+      "name": "Pet Comfort Ledger",
+      "asset": "assets/projects/idea-df4d2e17.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A welcoming pet shelter, two stylized cats, and a planted comfort path make the apartment pet ledger spatial."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "pet-comfort",
+        "summary": "A welcoming pet shelter, two stylized cats, and a planted comfort path make the apartment pet ledger spatial."
+      },
+      "triangles": 2172,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.840000033378601,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "run-dna",
+      "name": "Run DNA",
+      "asset": "assets/projects/idea-19c6c312.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An expressive running route rises into a double helix beside a watch-like metrics kiosk."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "run-dna",
+        "summary": "An expressive running route rises into a double helix beside a watch-like metrics kiosk."
+      },
+      "triangles": 4868,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.966027021408081,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "rope-storage",
+      "name": "Rope-only Wall Storage",
+      "asset": "assets/projects/idea-c2a29761.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A tall anchor wall supports three suspended rope slings with everyday stored objects."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "rope-storage",
+        "summary": "A tall anchor wall supports three suspended rope slings with everyday stored objects."
+      },
+      "triangles": 4412,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.8450000286102295,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "magnetic-iron",
+      "name": "Magnetic Ironing",
+      "asset": "assets/projects/idea-80553c2c.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A lightweight ironing board exposes its thin ferromagnetic grid beneath a compact modular iron."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "magnetic-iron",
+        "summary": "A lightweight ironing board exposes its thin ferromagnetic grid beneath a compact modular iron."
+      },
+      "triangles": 1004,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.965000033378601,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "personality-elements",
+      "name": "Personality Periodic Table",
+      "asset": "assets/projects/idea-42501ee3.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A colorful periodic arrangement of personality elements accompanies two visibly bonded spheres."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "personality-elements",
+        "summary": "A colorful periodic arrangement of personality elements accompanies two visibly bonded spheres."
+      },
+      "triangles": 4008,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.5950000286102295,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "solar-sales",
+      "name": "Solar Rooftop Sales Engine",
+      "asset": "assets/projects/idea-bfbd7e8b.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A small neighborhood has photovoltaic rooftops and a shared battery, depicting the solar sales operation."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "solar-sales",
+        "summary": "A small neighborhood has photovoltaic rooftops and a shared battery, depicting the solar sales operation."
+      },
+      "triangles": 4724,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.9445000886917114,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "automation-economics",
+      "name": "Worker ↔ Robot Economics",
+      "asset": "assets/projects/idea-d3f1d72d.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A person and robot share a balanced comparison platform with a central payback display."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "automation-economics",
+        "summary": "A person and robot share a balanced comparison platform with a central payback display."
+      },
+      "triangles": 2356,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.499999761581421,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "wake-recoverability",
+      "name": "Disturbed-Flow Recoverability",
+      "asset": "assets/projects/idea-ffc6ec82.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Parallel smooth and disturbed flow traces pass through matched experimental rotor stations."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "wake-recoverability",
+        "summary": "Parallel smooth and disturbed flow traces pass through matched experimental rotor stations."
+      },
+      "triangles": 2532,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.0199999809265137,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "keltech-avatars",
+      "name": "Keltech Employee Avatars",
+      "asset": "assets/projects/idea-70c69e88.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A company ensemble of three reusable employee avatars faces a production camera pedestal."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "keltech-avatars",
+        "summary": "A company ensemble of three reusable employee avatars faces a production camera pedestal."
+      },
+      "triangles": 3624,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.2799999713897705,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "chase-tag",
+      "name": "World Chase Tag Rig",
+      "asset": "assets/projects/idea-b2879bd0.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A purposeful chase-tag arena has platforms, overhead bars, and a winding running route."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "chase-tag",
+        "summary": "A purposeful chase-tag arena has platforms, overhead bars, and a winding running route."
+      },
+      "triangles": 1572,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.115000009536743,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "titanium-merch",
+      "name": "Titanium Team Merch",
+      "asset": "assets/projects/idea-4af9ad08.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A merchandise workshop presents three custom caps with distinct crowns and brims."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "titanium-merch",
+        "summary": "A merchandise workshop presents three custom caps with distinct crowns and brims."
+      },
+      "triangles": 8104,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.629999876022339,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "mih-hub",
+      "name": "MIH Innovation Hub",
+      "asset": "assets/projects/idea-f8712023.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A workshop and crane host a public demonstration bench, visitor figures, and a protected perimeter."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "mih-hub",
+        "summary": "A workshop and crane host a public demonstration bench, visitor figures, and a protected perimeter."
+      },
+      "triangles": 6980,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.9149999618530273,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "experimental-vehicle",
+      "name": "Experimental Vehicle Lab",
+      "asset": "assets/projects/idea-2927561a.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A low experimental vehicle has oversized wheels, an enclosed cockpit, light bars, and a sensor bridge."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "experimental-vehicle",
+        "summary": "A low experimental vehicle has oversized wheels, an enclosed cockpit, light bars, and a sensor bridge."
+      },
+      "triangles": 4164,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.5649999380111694,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "patent-discovery",
+      "name": "Patent Discovery + Investing",
+      "asset": "assets/projects/idea-01d02668.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A large discovery lens examines a new invention beside a library of submitted designs."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "patent-discovery",
+        "summary": "A large discovery lens examines a new invention beside a library of submitted designs."
+      },
+      "triangles": 2184,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.7899999618530273,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "karmic-life",
+      "name": "Karmic Life / Civilization OS",
+      "asset": "assets/projects/idea-8b1a1e59.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open design atelier, construction arm, idea lamp, and miniature living world show ideas becoming places."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "karmic-life",
+        "summary": "An open design atelier, construction arm, idea lamp, and miniature living world show ideas becoming places."
+      },
+      "triangles": 4920,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.240000009536743,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "distributed-self",
+      "name": "Distributed Self & Human Fields",
+      "asset": "assets/projects/idea-8cdf5fa3.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A human figure is surrounded by clearly illustrative field rings and internal mapping nodes."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "distributed-self",
+        "summary": "A human figure is surrounded by clearly illustrative field rings and internal mapping nodes."
+      },
+      "triangles": 4384,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          2.9749999046325684,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "maker-bay",
+      "name": "Local AI Workshop / Maker Bay",
+      "asset": "assets/projects/idea-36c54ce2.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open physical workshop has a working-form 3D printer, a printed object, and an electronics bench."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "maker-bay",
+        "summary": "An open physical workshop has a working-form 3D printer, a printed object, and an electronics bench."
+      },
+      "triangles": 4884,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.325000047683716,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "machine-bridge",
+      "name": "Machine ↔ Phone Bridge",
+      "asset": "assets/projects/idea-b5d70efc.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A phone connects through a visible control cable to a geared experimental machine."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "machine-bridge",
+        "summary": "A phone connects through a visible control cable to a geared experimental machine."
+      },
+      "triangles": 3344,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.380000114440918,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "star-registry",
+      "name": "Buy a Star Registry",
+      "asset": "assets/projects/idea-b70286e3.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A celestial coordinate instrument, star markers, and a registry book evoke cultural naming and cataloguing."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "star-registry",
+        "summary": "A celestial coordinate instrument, star markers, and a registry book evoke cultural naming and cataloguing."
+      },
+      "triangles": 3512,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          2.8499999046325684,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "ludo",
+      "name": "4D Ludo & Indian Game Lab",
+      "asset": "assets/projects/idea-fb1cc5af.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A four-territory board, civilization pawns, and a raised time-layer city express the 4D Ludo exploration."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "ludo",
+        "summary": "A four-territory board, civilization pawns, and a raised time-layer city express the 4D Ludo exploration."
+      },
+      "triangles": 2600,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.754641056060791,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "knowledge-film",
+      "name": "Knowledge → Film Engine",
+      "asset": "assets/projects/idea-326f629c.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Stacks of research books feed a narrative screen through a visible story-making gear."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "knowledge-film",
+        "summary": "Stacks of research books feed a narrative screen through a visible story-making gear."
+      },
+      "triangles": 5164,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.0250000953674316,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "era-skins",
+      "name": "Era Skins",
+      "asset": "assets/projects/idea-416e52d6.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three generational figures occupy separate historical, transitional, and future era frames."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "era-skins",
+        "summary": "Three generational figures occupy separate historical, transitional, and future era frames."
+      },
+      "triangles": 4688,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.3349997997283936,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "idea-evaluation",
+      "name": "Idea Evaluation Engine",
+      "asset": "assets/projects/idea-8fbc708f.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Two opposing critique probes examine an idea in a dedicated testing rig."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "idea-evaluation",
+        "summary": "Two opposing critique probes examine an idea in a dedicated testing rig."
+      },
+      "triangles": 2192,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.1549999713897705,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "portals",
+      "name": "3D Portals",
+      "asset": "assets/projects/idea-1a77ed68.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Two full-height spatial portals each contain a person and connect through a shared presence path."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "portals",
+        "summary": "Two full-height spatial portals each contain a person and connect through a shared presence path."
+      },
+      "triangles": 3092,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.68999981880188,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "multi-ai",
+      "name": "Multi-AI Conversation Site",
+      "asset": "assets/projects/idea-089ba4d7.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three distinct participants gather around one shared thread with visible cross-reasoning links."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "multi-ai",
+        "summary": "Three distinct participants gather around one shared thread with visible cross-reasoning links."
+      },
+      "triangles": 3680,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          1.7400001287460327,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "robot-podcast",
+      "name": "AI Robot Podcast",
+      "asset": "assets/projects/idea-b39f0ffa.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A host and two robot co-hosts sit at a real podcast table with individual microphones."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "robot-podcast",
+        "summary": "A host and two robot co-hosts sit at a real podcast table with individual microphones."
+      },
+      "triangles": 4148,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.3249998092651367,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "compute-cluster",
+      "name": "Personal Distributed Compute",
+      "asset": "assets/projects/idea-fbb201dd.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Different-sized compute towers share a gold interconnect and a phone node."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "compute-cluster",
+        "summary": "Different-sized compute towers share a gold interconnect and a phone node."
+      },
+      "triangles": 11628,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.799999952316284,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "ministers",
+      "name": "GitHub for Ministers",
+      "asset": "assets/projects/idea-762ec217.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open civic colonnade contains an evidence timeline with connected, timestamp-like nodes."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "ministers",
+        "summary": "An open civic colonnade contains an evidence timeline with connected, timestamp-like nodes."
+      },
+      "triangles": 6900,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.7300000190734863,
+          2.049999952316284
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "gravity-rail",
+      "name": "Gravity Logistics Railway",
+      "asset": "assets/projects/idea-1965cf40.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Sloping suspended freight rails, hanging bogeys, tall lift stations, and an Archimedes loading screw."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "gravity-rail",
+        "summary": "Sloping suspended freight rails, hanging bogeys, tall lift stations, and an Archimedes loading screw."
+      },
+      "triangles": 4732,
+      "bounds": {
+        "min": [
+          -2.700000286102295,
+          0.0,
+          -1.9000002145767212
+        ],
+        "max": [
+          2.700000286102295,
+          3.054020643234253,
+          1.9000002145767212
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "bio-bottle",
+      "name": "Edible / Biodegradable Bottle",
+      "asset": "assets/projects/idea-80c75a2c.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three tapered bottles show removable caps and visible reinforcement fibres beneath a materials testing canopy."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "bio-bottle",
+        "summary": "Three tapered bottles show removable caps and visible reinforcement fibres beneath a materials testing canopy."
+      },
+      "triangles": 13374,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.929450035095215,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "ai-chess",
+      "name": "AI Chess Evolution",
+      "asset": "assets/projects/idea-237c728e.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Pawn-to-king pieces rise across a chessboard to show divergent stages of AI evolution."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "ai-chess",
+        "summary": "Pawn-to-king pieces rise across a chessboard to show divergent stages of AI evolution."
+      },
+      "triangles": 4140,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.0399999618530273,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "creatine",
+      "name": "Karmic Creatine",
+      "asset": "assets/projects/idea-4764dff0.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A running loop surrounds a branded reservoir and three direct dispensing taps at a sampling counter."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "creatine",
+        "summary": "A running loop surrounds a branded reservoir and three direct dispensing taps at a sampling counter."
+      },
+      "triangles": 3756,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.9900000095367432,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "review-pages",
+      "name": "Co-branded Review Pages",
+      "asset": "assets/projects/idea-86c68564.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Paired shop review phones face a customer recording position and a row of review markers."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "review-pages",
+        "summary": "Paired shop review phones face a customer recording position and a row of review markers."
+      },
+      "triangles": 3880,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.2799999713897705,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "religion-earths",
+      "name": "Religion Earths",
+      "asset": "assets/projects/idea-f8e66468.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Eight equal simulation globes sit inside an open observatory orbit; no religion is given superior rank."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "religion-earths",
+        "summary": "Eight equal simulation globes sit inside an open observatory orbit; no religion is given superior rank."
+      },
+      "triangles": 8924,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          3.5899996757507324,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "cooling-stack",
+      "name": "Transparent Cooling Stack",
+      "asset": "assets/projects/idea-69110475.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Blue coolant reservoirs, two exposed heat-exchange loops, and a finned cooler mounted at the base."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "cooling-stack",
+        "summary": "Blue coolant reservoirs, two exposed heat-exchange loops, and a finned cooler mounted at the base."
+      },
+      "triangles": 6852,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.5350000858306885,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "agent-swarm",
+      "name": "Karmic Agent Swarm",
+      "asset": "assets/projects/idea-279e6d03.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Six role consoles surround a shared orbital core, with a small robot receiving tasks."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "agent-swarm",
+        "summary": "Six role consoles surround a shared orbital core, with a small robot receiving tasks."
+      },
+      "triangles": 8176,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          2.6449999809265137,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "rudraksha",
+      "name": "Digital Rudraksha Jaap Mala",
+      "asset": "assets/projects/idea-3e586b84.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An architectural ring of individually grooved mala beads frames a meditation seat and chant phone."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "rudraksha",
+        "summary": "An architectural ring of individually grooved mala beads frames a meditation seat and chant phone."
+      },
+      "triangles": 10916,
+      "bounds": {
+        "min": [
+          -2.25,
+          0.0,
+          -2.25
+        ],
+        "max": [
+          2.25,
+          3.043581485748291,
+          2.25
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "time-use",
+      "name": "24-hour Class Simulator",
+      "asset": "assets/projects/idea-a3a97b8a.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three equal-sized 24-hour clocks compare different reference-class allocations of the same day."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "time-use",
+        "summary": "Three equal-sized 24-hour clocks compare different reference-class allocations of the same day."
+      },
+      "triangles": 8744,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.234999895095825,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "smoking-freedom",
+      "name": "Smoking Freedom",
+      "asset": "assets/projects/idea-1b175b16.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "An open walking route passes between separated dependency links and growing trees."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "smoking-freedom",
+        "summary": "An open walking route passes between separated dependency links and growing trees."
+      },
+      "triangles": 5696,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          1.9259999990463257,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "guru-engine",
+      "name": "Guru-selection Engine",
+      "asset": "assets/projects/idea-12b4515d.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Three distinct mentor pavilions and branching paths express stage-specific guidance and guru loops."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "guru-engine",
+        "summary": "Three distinct mentor pavilions and branching paths express stage-specific guidance and guru loops."
+      },
+      "triangles": 7200,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          3.8400001525878906,
+          2.049999952316284
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "four-log",
+      "name": "“4 Log” Reference Classes",
+      "asset": "assets/projects/idea-d7966daa.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "Four people occupy different reference-class platforms around a comparison lens."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "four-log",
+        "summary": "Four people occupy different reference-class platforms around a comparison lens."
+      },
+      "triangles": 3488,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.048799991607666,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    },
+    {
+      "projectId": "thermal-phone",
+      "name": "Smartphone Thermal Investigation",
+      "asset": "assets/projects/idea-6a9c8955.glb",
+      "truthState": "FANTASY_WORLD",
+      "architectureVersion": 3,
+      "artRevision": 4,
+      "generator": "Blender",
+      "features": [
+        "A phone shows an illustrative heatmap beside an optical investigation stand; it does not assert thermal hardware capability."
+      ],
+      "source": {
+        "file": "src/inventory.ts",
+        "projectId": "thermal-phone",
+        "summary": "A phone shows an illustrative heatmap beside an optical investigation stand; it does not assert thermal hardware capability."
+      },
+      "triangles": 2596,
+      "bounds": {
+        "min": [
+          -2.4000003337860107,
+          0.0,
+          -1.950000286102295
+        ],
+        "max": [
+          2.4000003337860107,
+          2.799999952316284,
+          1.950000286102295
+        ]
+      },
+      "materials": 1
+    }
+  ]
+}

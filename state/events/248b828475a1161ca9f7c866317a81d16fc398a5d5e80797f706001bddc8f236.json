@@ -1,0 +1,21 @@
+{
+  "id": "public-catalogue:pet-comfort",
+  "date": "2026-09-22",
+  "title": "Pet Comfort Ledger",
+  "summary": "A pet-friendly garden with shelter, pathways, and comfort stations.",
+  "zone": "home",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "pet-comfort",
+    "name": "Pet Comfort Ledger",
+    "zone": "home",
+    "plot": 0,
+    "motif": "garden",
+    "links": [
+      "rwa"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

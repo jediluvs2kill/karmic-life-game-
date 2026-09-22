@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:karmic-cameras",
+  "date": "2026-09-22",
+  "title": "Karmic Cameras",
+  "summary": "A camera workshop crowned by a large lens and sensor mast.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "karmic-cameras",
+    "name": "Karmic Cameras",
+    "zone": "maker",
+    "plot": 1,
+    "motif": "phone",
+    "links": [
+      "sync",
+      "robotics-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

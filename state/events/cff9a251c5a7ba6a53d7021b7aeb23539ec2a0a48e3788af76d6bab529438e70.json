@@ -1,0 +1,27 @@
+{
+  "id": "contribution:b428f1d1-9728-4d66-b01f-e56c02ca2341",
+  "date": "2026-09-22",
+  "title": "Shared Claude and Codex world editing",
+  "summary": "Published the refined 77-building Blender world, 24 animated residents, idea nameplates and subtitles, plus a Claude collaboration guide, public contribution rules, issue template and pull-request review path. Claude and Codex can edit the same public codebase through normal GitHub branches and attributed footprints; private conversation history remains outside the public repository.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "prototype",
+    "evidence": "CLAUDE.md; AGENTS.md; src/inhabitants.ts; src/idea-labels.ts; assets/blender/karmic-ideas.blend; npm run build passed; 26 public tests passed; privacy audit passed"
+  }
+}

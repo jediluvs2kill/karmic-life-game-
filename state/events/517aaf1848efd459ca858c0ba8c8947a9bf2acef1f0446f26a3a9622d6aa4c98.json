@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:solar-sales",
+  "date": "2026-09-22",
+  "title": "Solar Rooftop Sales Engine",
+  "summary": "A rooftop solar colony demonstrates connected photovoltaic roofs.",
+  "zone": "wind",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "solar-sales",
+    "name": "Solar Rooftop Sales Engine",
+    "zone": "wind",
+    "plot": 2,
+    "motif": "energy",
+    "links": [
+      "webroker",
+      "green-lab"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

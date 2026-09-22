@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:sanskrit-agi",
+  "date": "2026-09-22",
+  "title": "Karmic Sanskrit AGI",
+  "summary": "A language research hall combines inscription panels and an intelligence core.",
+  "zone": "knowledge",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "sanskrit-agi",
+    "name": "Karmic Sanskrit AGI",
+    "zone": "knowledge",
+    "plot": 2,
+    "motif": "science",
+    "links": [
+      "multi-ai",
+      "guru-engine"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

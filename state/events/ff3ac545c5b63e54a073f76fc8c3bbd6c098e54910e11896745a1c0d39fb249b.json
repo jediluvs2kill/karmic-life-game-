@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:investor-portal",
+  "date": "2026-09-22",
+  "title": "Karmic Investor Portal",
+  "summary": "An investment observatory links project display pods.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "investor-portal",
+    "name": "Karmic Investor Portal",
+    "zone": "business",
+    "plot": 4,
+    "motif": "network",
+    "links": [
+      "finance-os",
+      "patent-discovery",
+      "aic-ecosystem"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:rf-tattoos",
+  "date": "2026-09-22",
+  "title": "Wi-Fi Reflective Tattoos",
+  "summary": "An experimental radio-surface laboratory displays antenna patterns.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "rf-tattoos",
+    "name": "Wi-Fi Reflective Tattoos",
+    "zone": "maker",
+    "plot": 3,
+    "motif": "science",
+    "links": [
+      "distributed-self",
+      "spatial-engine"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

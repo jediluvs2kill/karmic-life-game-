@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:legal-os",
+  "date": "2026-09-22",
+  "title": "Karmic Legal OS",
+  "summary": "A legal knowledge hall with balanced wings and an archive entrance.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "legal-os",
+    "name": "Karmic Legal OS",
+    "zone": "business",
+    "plot": 3,
+    "motif": "network",
+    "links": [
+      "ip-vault",
+      "webroker"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

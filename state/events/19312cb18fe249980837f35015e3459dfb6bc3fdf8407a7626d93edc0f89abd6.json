@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:api-gateway",
+  "date": "2026-09-22",
+  "title": "Karmic API Gateway",
+  "summary": "A network gateway connects luminous data conduits.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "api-gateway",
+    "name": "Karmic API Gateway",
+    "zone": "agents",
+    "plot": 1,
+    "motif": "network",
+    "links": [
+      "edge-core",
+      "multi-ai",
+      "capture-memory"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

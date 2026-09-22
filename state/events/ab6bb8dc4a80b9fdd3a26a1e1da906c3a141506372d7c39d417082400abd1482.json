@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:time-use",
+  "date": "2026-09-22",
+  "title": "24-hour Class Simulator",
+  "summary": "A time-allocation observatory divides a large clock into activity sectors.",
+  "zone": "mentor",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "time-use",
+    "name": "24-hour Class Simulator",
+    "zone": "mentor",
+    "plot": 1,
+    "motif": "science",
+    "links": [
+      "guru-engine",
+      "four-log"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

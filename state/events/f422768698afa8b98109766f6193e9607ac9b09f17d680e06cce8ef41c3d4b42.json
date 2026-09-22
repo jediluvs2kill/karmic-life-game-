@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:multi-ai",
+  "date": "2026-09-22",
+  "title": "Multi-AI Conversation Site",
+  "summary": "A roundtable pavilion connects multiple intelligence terminals.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "multi-ai",
+    "name": "Multi-AI Conversation Site",
+    "zone": "agents",
+    "plot": 4,
+    "motif": "network",
+    "links": [
+      "agent-swarm",
+      "robot-podcast",
+      "api-gateway"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

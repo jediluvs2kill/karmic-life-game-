@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:chase-tag",
+  "date": "2026-09-22",
+  "title": "World Chase Tag Rig",
+  "summary": "An obstacle pavilion creates a compact maze of chase routes.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "chase-tag",
+    "name": "World Chase Tag Rig",
+    "zone": "creative",
+    "plot": 8,
+    "motif": "game",
+    "links": [
+      "mih-hub",
+      "kinetics"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

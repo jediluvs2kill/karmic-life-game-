@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:rudraksha",
+  "date": "2026-09-22",
+  "title": "Digital Rudraksha Jaap Mala",
+  "summary": "A meditation shrine frames a sculptural ring of carved digital beads.",
+  "zone": "spirit",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "rudraksha",
+    "name": "Digital Rudraksha Jaap Mala",
+    "zone": "spirit",
+    "plot": 1,
+    "motif": "temple",
+    "links": [
+      "capture-memory",
+      "sanskrit-agi"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

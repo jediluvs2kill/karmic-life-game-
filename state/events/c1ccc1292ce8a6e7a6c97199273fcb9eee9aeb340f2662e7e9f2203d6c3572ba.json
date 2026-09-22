@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:bio-bottle",
+  "date": "2026-09-22",
+  "title": "Edible / Biodegradable Bottle",
+  "summary": "A biomaterials laboratory displays reinforced bottle prototypes.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "bio-bottle",
+    "name": "Edible / Biodegradable Bottle",
+    "zone": "maker",
+    "plot": 15,
+    "motif": "materials",
+    "links": [
+      "circular-materials",
+      "plastic-recycler",
+      "green-lab"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

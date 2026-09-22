@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:finance-os",
+  "date": "2026-09-22",
+  "title": "Karmic Finance OS",
+  "summary": "A financial planning pavilion with chart-like rooflines.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "finance-os",
+    "name": "Karmic Finance OS",
+    "zone": "business",
+    "plot": 2,
+    "motif": "network",
+    "links": [
+      "investor-portal",
+      "analytics"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

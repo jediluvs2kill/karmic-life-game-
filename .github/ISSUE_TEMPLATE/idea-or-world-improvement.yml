@@ -1,0 +1,42 @@
+name: Idea or world improvement
+description: Propose one idea landmark or focused improvement to the living world.
+title: "[World] "
+body:
+  - type: markdown
+    attributes:
+      value: "This is a public repository. Include only information intended for publication."
+  - type: input
+    id: project
+    attributes:
+      label: Project ID or proposed idea name
+      description: Use an existing ID from src/inventory.ts when expanding an idea.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+      description: Describe the recognizable building features, behavior, or player interaction.
+    validations:
+      required: true
+  - type: dropdown
+    id: basis
+    attributes:
+      label: Basis of this proposal
+      options:
+        - User idea
+        - Agent hypothesis
+        - Fantasy world design
+        - Existing artifact or evidence-backed work
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public references and limits
+      description: Link public source material or artifacts if available. State what is still speculative.
+  - type: textarea
+    id: completion
+    attributes:
+      label: How will we know it works?
+      description: Describe a useful visual review, interaction check, or test.

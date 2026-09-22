@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:review-pages",
+  "date": "2026-09-22",
+  "title": "Co-branded Review Pages",
+  "summary": "A customer-story studio combines a video booth and review display.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "review-pages",
+    "name": "Co-branded Review Pages",
+    "zone": "creative",
+    "plot": 13,
+    "motif": "media",
+    "links": [
+      "reels-studio",
+      "creatine",
+      "brand-studio"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

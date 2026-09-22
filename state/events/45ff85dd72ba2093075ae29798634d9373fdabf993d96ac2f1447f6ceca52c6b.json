@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:machine-bridge",
+  "date": "2026-09-22",
+  "title": "Machine ↔ Phone Bridge",
+  "summary": "A machine-control station connects a phone dock to experimental hardware.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "machine-bridge",
+    "name": "Machine ↔ Phone Bridge",
+    "zone": "maker",
+    "plot": 13,
+    "motif": "phone",
+    "links": [
+      "robotics-core",
+      "edge-core",
+      "maker-bay"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

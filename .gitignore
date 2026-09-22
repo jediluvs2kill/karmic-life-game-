@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.karmic/
+*.local
+playtest/
+.codex-remote-attachments/
+.asset-source/
+public/world-state.json
+public/project-assets.json
+*.tmp
+*.blend1
+*.blend2
+
+.env
+.env.*

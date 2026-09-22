@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:ip-vault",
+  "date": "2026-09-22",
+  "title": "Karmic IP & Patent Vault",
+  "summary": "A patent archive protects invention diagrams inside a geometric vault.",
+  "zone": "knowledge",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "ip-vault",
+    "name": "Karmic IP & Patent Vault",
+    "zone": "knowledge",
+    "plot": 1,
+    "motif": "science",
+    "links": [
+      "patent-discovery",
+      "legal-os",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

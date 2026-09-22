@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:rigpulse",
+  "date": "2026-09-22",
+  "title": "RigPulse / Predator Sense",
+  "summary": "A telemetry terminal links a laptop display to a phone dashboard.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "rigpulse",
+    "name": "RigPulse / Predator Sense",
+    "zone": "maker",
+    "plot": 0,
+    "motif": "phone",
+    "links": [
+      "edge-core",
+      "compute-cluster"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

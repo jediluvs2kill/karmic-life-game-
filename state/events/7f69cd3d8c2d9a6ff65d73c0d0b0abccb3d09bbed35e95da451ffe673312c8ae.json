@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:games-vault",
+  "date": "2026-09-22",
+  "title": "Karmic Games Vault",
+  "summary": "An arcade vault stores game worlds and achievement symbols.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "games-vault",
+    "name": "Karmic Games Vault",
+    "zone": "creative",
+    "plot": 0,
+    "motif": "game",
+    "links": [
+      "gamer-passport",
+      "ludo"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:four-log",
+  "date": "2026-09-22",
+  "title": "“4 Log” Reference Classes",
+  "summary": "A reference-class pavilion compares four neighboring perspective stations.",
+  "zone": "mentor",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "four-log",
+    "name": "“4 Log” Reference Classes",
+    "zone": "mentor",
+    "plot": 3,
+    "motif": "science",
+    "links": [
+      "guru-engine",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

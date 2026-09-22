@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:automation-economics",
+  "date": "2026-09-22",
+  "title": "Worker ↔ Robot Economics",
+  "summary": "A comparative workshop pairs human and robotic workstations.",
+  "zone": "business",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "automation-economics",
+    "name": "Worker ↔ Robot Economics",
+    "zone": "business",
+    "plot": 8,
+    "motif": "robot",
+    "links": [
+      "robotics-core",
+      "finance-os"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

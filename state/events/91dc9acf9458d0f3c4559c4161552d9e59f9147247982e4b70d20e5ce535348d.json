@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:character-studio",
+  "date": "2026-09-22",
+  "title": "AI Character Studio",
+  "summary": "An avatar studio displays character busts and a creation stage.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "character-studio",
+    "name": "AI Character Studio",
+    "zone": "creative",
+    "plot": 2,
+    "motif": "media",
+    "links": [
+      "robot-podcast",
+      "ghibliface",
+      "era-skins"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:ministers",
+  "date": "2026-09-22",
+  "title": "GitHub for Ministers",
+  "summary": "A civic ledger hall displays a public timeline and evidence columns.",
+  "zone": "knowledge",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "ministers",
+    "name": "GitHub for Ministers",
+    "zone": "knowledge",
+    "plot": 5,
+    "motif": "network",
+    "links": [
+      "we-news",
+      "rwa"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

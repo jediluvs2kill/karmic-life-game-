@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:reels-studio",
+  "date": "2026-09-22",
+  "title": "Karmic Reels Studio",
+  "summary": "A short-film studio with screens, lights, and a vertical editing display.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "reels-studio",
+    "name": "Karmic Reels Studio",
+    "zone": "creative",
+    "plot": 3,
+    "motif": "media",
+    "links": [
+      "review-pages",
+      "brand-studio",
+      "knowledge-film"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

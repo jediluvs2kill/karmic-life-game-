@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:wraithwave",
+  "date": "2026-09-22",
+  "title": "WraithWave / MixerWave",
+  "summary": "An audio laboratory turns waveforms into sculptural fins.",
+  "zone": "creative",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "wraithwave",
+    "name": "WraithWave / MixerWave",
+    "zone": "creative",
+    "plot": 4,
+    "motif": "media",
+    "links": [
+      "reels-studio",
+      "robot-podcast"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

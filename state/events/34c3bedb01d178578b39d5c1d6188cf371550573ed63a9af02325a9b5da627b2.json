@@ -1,0 +1,22 @@
+{
+  "id": "public-catalogue:rope-storage",
+  "date": "2026-09-22",
+  "title": "Rope-only Wall Storage",
+  "summary": "A tension-rope workshop displays suspended storage frames.",
+  "zone": "maker",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "rope-storage",
+    "name": "Rope-only Wall Storage",
+    "zone": "maker",
+    "plot": 8,
+    "motif": "materials",
+    "links": [
+      "maker-bay",
+      "webuild"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}

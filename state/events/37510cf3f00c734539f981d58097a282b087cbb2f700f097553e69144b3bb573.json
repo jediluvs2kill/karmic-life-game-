@@ -1,0 +1,23 @@
+{
+  "id": "public-catalogue:edge-core",
+  "date": "2026-09-22",
+  "title": "Karmic Edge + Core",
+  "summary": "A compute hub connects small edge nodes to a central processor.",
+  "zone": "agents",
+  "kind": "idea",
+  "sourceTitle": "Public idea-world catalogue · 2026-09-22",
+  "project": {
+    "id": "edge-core",
+    "name": "Karmic Edge + Core",
+    "zone": "agents",
+    "plot": 2,
+    "motif": "network",
+    "links": [
+      "capture-memory",
+      "compute-cluster",
+      "robotics-core"
+    ]
+  },
+  "actor": "Karmic Life public catalogue",
+  "truthState": "USER_IDEA"
+}
