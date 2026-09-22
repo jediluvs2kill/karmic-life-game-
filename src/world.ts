@@ -16,6 +16,7 @@ import {createInhabitants} from './inhabitants';
 import {createAnimeAnimals} from './anime-animals';
 import {createWeatherPockets} from './weather-pockets';
 import {createFantasyBoats} from './fantasy-boats';
+import {createTrippySkyline} from './trippy-skyline';
 import {projectsAt,projectPosition,type LivingProject} from './projects';
 
 export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProject:(id:string)=>void){
@@ -40,6 +41,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  const animals=createAnimeAnimals(scene,{reducedMotion:reduced});
  const pocketWeather=createWeatherPockets(scene,{reducedMotion:reduced});
  const boats=createFantasyBoats(scene,{reducedMotion:reduced});
+ const skyline=createTrippySkyline(scene,{reducedMotion:reduced});
  controls.addEventListener('start',()=>{gsap.killTweensOf(camera.position);gsap.killTweensOf(controls.target);});
  const ambient=new THREE.HemisphereLight('#d5eeff','#e5d8be',1.75);scene.add(ambient);
  const sun=new THREE.DirectionalLight('#fff0d7',2.2);sun.position.set(-30,50,35);scene.add(sun);
@@ -84,7 +86,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   resetGeometry();records=worldAt(save,date);projects=projectsAt(save,date);host.dataset.projectCount=String(projects.length);liveView=date===save.events.reduce((latest,event)=>event.date>latest?event.date:latest,'');
   walkable=buildLandscape(projects,cube,scenery.place);
   residents.rebuild(projects,walkable);host.dataset.residentCount=String(residents.count);
-  animals.rebuild(projects,walkable);host.dataset.animalCount=String(animals.count);host.dataset.weatherPocketCount=String(pocketWeather.count);host.dataset.boatCount=String(boats.count);
+  animals.rebuild(projects,walkable);host.dataset.animalCount=String(animals.count);host.dataset.weatherPocketCount=String(pocketWeather.count);host.dataset.boatCount=String(boats.count);host.dataset.skylineTowerCount=String(skyline.count);
   // District addresses remain stable; each invention is now the visible landmark.
   projects.forEach(pavilion);void projectAssets.load();
   const matrix=new THREE.Matrix4();const quaternion=new THREE.Quaternion();const position=new THREE.Vector3();const scale=new THREE.Vector3();
@@ -124,6 +126,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   animals.update(now*.001,liveView);
   pocketWeather.update(now*.001,liveView);
   boats.update(now*.001,liveView);
+  skyline.update(now*.001,liveView);
   if(target){const distance=avatar.position.distanceTo(target);if(distance>.15){avatar.position.lerp(target,Math.min(1,dt*1.4));avatar.rotation.y=Math.atan2(target.x-avatar.position.x,target.z-avatar.position.z);if(!reduced)avatar.position.y=.35+Math.abs(Math.sin(now*.009))*.08;}else target=undefined;}
   for(const actor of inhabitants.values()){
    actor.group.visible=liveView;if(!liveView){actor.label.hidden=true;continue;}
@@ -140,7 +143,8 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
   const sorted=[...labelItems].sort((a,b)=>Number(b.project?.id===selectedProject)-Number(a.project?.id===selectedProject));
   for(const {el,pos,project}of sorted){projected.copy(pos).project(camera);const lx=(projected.x*.5+.5)*host.clientWidth,ly=(-projected.y*.5+.5)*host.clientHeight;el.style.left=lx+'px';el.style.top=ly+'px';
    const chosen=project?.id===selectedProject;
-   const identity=project?ideaLabel(project):undefined;const w=166,h=37+((identity?.name.length??0)>28?11:0)+((identity?.subtitle.length??0)>38?9:0),centerY=ly-h/2;
+   const identity=project?ideaLabel(project):undefined,landmark=el.classList.contains('landmark-label'),expanded=chosen||el.matches(':hover,:focus-visible');
+   const w=expanded?166:landmark?128:20,h=expanded?37+((identity?.name.length??0)>28?11:0)+((identity?.subtitle.length??0)>38?9:0):landmark?25:20,centerY=ly-h/2;
    let hide=projected.z>1||lx<w/2+8||lx>host.clientWidth-w/2-8||ly-h<82||ly>host.clientHeight-72||!!(selectedProject&&!chosen);
    if(!hide&&panels.some(r=>lx+w/2>r.left&&lx-w/2<r.right&&centerY+h/2>r.top&&centerY-h/2<r.bottom))hide=true;
    if(!hide&&!chosen&&occupied.some(o=>Math.abs(lx-o.x)<(w+o.w)/2&&Math.abs(centerY-o.y)<(h+o.h)/2))hide=true;
@@ -151,7 +155,7 @@ export function createWorld(host:HTMLElement,onSelect:(id:ZoneId)=>void,onProjec
  }
  new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;renderer.setSize(w,h);atmosphere.resize(w,h);camera.aspect=w/h;camera.clearViewOffset();home();camera.updateProjectionMatrix();}).observe(host);
  requestAnimationFrame(frame);
- function snapshot(save:Save,date:string){const position=camera.position.clone(),look=controls.target.clone(),aspect=camera.aspect;rebuild(save,date);camera.aspect=16/9;camera.position.set(12,69,90);controls.target.set(1,0,3);camera.updateProjectionMatrix();controls.update();renderer.setSize(240,135,false);atmosphere.resize(240,135);avatar.visible=false;residents.update(0,0,false);animals.update(0,false);pocketWeather.update(0,false);boats.update(0,false);const oldMarker=marker.visible;marker.visible=false;for(const a of inhabitants.values())a.group.visible=false;atmosphere.render(0);const url=renderer.domElement.toDataURL('image/webp',.75);renderer.setSize(host.clientWidth,host.clientHeight);atmosphere.resize(host.clientWidth,host.clientHeight);camera.aspect=aspect;camera.updateProjectionMatrix();avatar.visible=true;marker.visible=oldMarker;for(const a of inhabitants.values())a.group.visible=true;animals.update(performance.now()*.001,liveView);pocketWeather.update(performance.now()*.001,liveView);boats.update(performance.now()*.001,liveView);camera.position.copy(position);controls.target.copy(look);controls.update();return url;}
+ function snapshot(save:Save,date:string){const position=camera.position.clone(),look=controls.target.clone(),aspect=camera.aspect;rebuild(save,date);camera.aspect=16/9;camera.position.set(12,69,90);controls.target.set(1,0,3);camera.updateProjectionMatrix();controls.update();renderer.setSize(240,135,false);atmosphere.resize(240,135);avatar.visible=false;residents.update(0,0,false);animals.update(0,false);pocketWeather.update(0,false);boats.update(0,false);skyline.update(0,false);const oldMarker=marker.visible;marker.visible=false;for(const a of inhabitants.values())a.group.visible=false;atmosphere.render(0);const url=renderer.domElement.toDataURL('image/webp',.75);renderer.setSize(host.clientWidth,host.clientHeight);atmosphere.resize(host.clientWidth,host.clientHeight);camera.aspect=aspect;camera.updateProjectionMatrix();avatar.visible=true;marker.visible=oldMarker;for(const a of inhabitants.values())a.group.visible=true;animals.update(performance.now()*.001,liveView);pocketWeather.update(performance.now()*.001,liveView);boats.update(performance.now()*.001,liveView);skyline.update(performance.now()*.001,liveView);camera.position.copy(position);controls.target.copy(look);controls.update();return url;}
  void scenery.load().then(result=>{host.dataset.assetsLoaded=String(result.loaded);host.dataset.assetStatus=result.failed?'partial':'ready';host.dispatchEvent(new CustomEvent('world-assets-ready',{detail:result}));});
- return {rebuild,home,archipelago,get residentCount(){return liveView?residents.count:0;},get animalCount(){return liveView?animals.count:0;},get weatherPocketCount(){return liveView?pocketWeather.count:0;},get boatCount(){return liveView?boats.count:0;},focus,focusProject,clearFocus:()=>{selected=undefined;selectedProject=undefined;marker.visible=false;},setNight,setAgents,snapshot,toggleEffects:()=>{atmosphere.setEnabled(!atmosphere.enabled);return atmosphere.enabled;},zoom:(amount:number)=>{const offset=camera.position.clone().sub(controls.target).multiplyScalar(amount);offset.clampLength(12,2200);const p=controls.target.clone().add(offset);gsap.to(camera.position,{x:p.x,y:p.y,z:p.z,duration:reduced?0:.5,ease:'power2.out',overwrite:true});},toggleLabels:()=>labels.classList.toggle('labels-hidden')};
+ return {rebuild,home,archipelago,get residentCount(){return liveView?residents.count:0;},get animalCount(){return liveView?animals.count:0;},get weatherPocketCount(){return liveView?pocketWeather.count:0;},get boatCount(){return liveView?boats.count:0;},get skylineTowerCount(){return liveView?skyline.count:0;},focus,focusProject,clearFocus:()=>{selected=undefined;selectedProject=undefined;marker.visible=false;},setNight,setAgents,snapshot,toggleEffects:()=>{atmosphere.setEnabled(!atmosphere.enabled);return atmosphere.enabled;},zoom:(amount:number)=>{const offset=camera.position.clone().sub(controls.target).multiplyScalar(amount);offset.clampLength(12,2200);const p=controls.target.clone().add(offset);gsap.to(camera.position,{x:p.x,y:p.y,z:p.z,duration:reduced?0:.5,ease:'power2.out',overwrite:true});},toggleLabels:()=>labels.classList.toggle('labels-hidden')};
 }

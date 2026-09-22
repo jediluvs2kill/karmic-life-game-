@@ -7,6 +7,7 @@ import {buildLandscape} from '../src/landscape.ts';
 import {createAnimeAnimals,planAnimeAnimals,sampleAnimeAnimal} from '../src/anime-animals.ts';
 import {createWeatherPockets,sampleWeatherParticle,weatherPockets} from '../src/weather-pockets.ts';
 import {createFantasyBoats,fantasyFleet,sampleBoat,sampleFleetVolley} from '../src/fantasy-boats.ts';
+import {createTrippySkyline,sampleSkylineTower,skylineTowers} from '../src/trippy-skyline.ts';
 
 const projects=projectsAt({events:inventionEvents},'2026-09-22');
 const walkable=buildLandscape(projects,()=>{},()=>true);
@@ -49,22 +50,33 @@ test('five localized weather pockets animate independently and respect reduced m
  weather.update(25,false);assert.equal(scene.children[0].visible,false);weather.dispose();assert.equal(scene.children.length,0);
 });
 
-test('six uniquely shaped fantasy boats patrol open water and exchange magical volleys',()=>{
- assert.equal(fantasyFleet.length,6);assert.equal(new Set(fantasyFleet.map(boat=>boat.kind)).size,6);assert.equal(new Set(fantasyFleet.map(boat=>boat.name)).size,6);
+test('eight uniquely shaped fantasy boats patrol the whole visible sea and exchange magical volleys',()=>{
+ assert.equal(fantasyFleet.length,8);assert.equal(new Set(fantasyFleet.map(boat=>boat.kind)).size,8);assert.equal(new Set(fantasyFleet.map(boat=>boat.name)).size,8);
  assert.deepEqual(new Set(fantasyFleet.map(boat=>boat.fleet)),new Set(['azure','coral']));
+ assert.deepEqual(new Set(fantasyFleet.map(boat=>boat.route)),new Set(['south','east','north','west']));
  for(const boat of fantasyFleet){
   assert.deepEqual(sampleBoat(boat,0,true),sampleBoat(boat,200,true));
-  for(let time=0;time<200;time+=3.7){const pose=sampleBoat(boat,time);assert.ok(pose.z>40,'Boat entered the island instead of staying in the southern sea lanes');assert.ok(Math.abs(pose.x)<=34.01);assert.ok(Object.values(pose).every(Number.isFinite));}
+  for(let time=0;time<200;time+=3.7){const pose=sampleBoat(boat,time);const outsideIsland=Math.abs(pose.x)>40||pose.z>40||pose.z<-40;assert.ok(outsideIsland,'Boat entered the island instead of staying in open water');assert.ok(Object.values(pose).every(Number.isFinite));}
  }
- assert.equal(sampleFleetVolley(12).length,6);assert.deepEqual(sampleFleetVolley(12,true),[]);
+ assert.equal(sampleFleetVolley(12).length,8);assert.deepEqual(sampleFleetVolley(12,true),[]);
  for(const bolt of sampleFleetVolley(999))assert.ok(Object.values(bolt).every(value=>typeof value==='string'||Number.isFinite(value)));
 });
 
 test('the complete fantasy fleet shares a compact render budget',()=>{
- const scene=new THREE.Scene(),boats=createFantasyBoats(scene,{reducedMotion:true});assert.equal(boats.count,6);
+ const scene=new THREE.Scene(),boats=createFantasyBoats(scene,{reducedMotion:true});assert.equal(boats.count,8);
  const group=scene.children[0];assert.equal(group.userData.truthState,'FANTASY_WORLD');assert.ok(group.children.length<=8);
  assert.ok(group.children.slice(0,-1).every(child=>child instanceof THREE.InstancedMesh));
  const before=group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array));boats.update(80,true);
  assert.deepEqual(group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array)),before);
  boats.update(81,false);assert.equal(group.visible,false);boats.dispose();assert.equal(scene.children.length,0);
+});
+
+test('the trippy skyline remains colorful, finite, and lightweight',()=>{
+ assert.equal(skylineTowers.length,28);assert.ok(new Set(skylineTowers.map(tower=>tower.color)).size>20);
+ for(const tower of skylineTowers){assert.deepEqual(sampleSkylineTower(tower,0,true),sampleSkylineTower(tower,100,true));assert.ok(Object.values(sampleSkylineTower(tower,999)).every(value=>typeof value==='string'||Number.isFinite(value)));}
+ const scene=new THREE.Scene(),skyline=createTrippySkyline(scene,{reducedMotion:true});assert.equal(skyline.count,28);
+ const group=scene.children[0];assert.equal(group.userData.truthState,'FANTASY_WORLD');assert.ok(group.children.length<=16);assert.ok(group.children.slice(0,-1).every(child=>child instanceof THREE.InstancedMesh));
+ const before=group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array));skyline.update(70,true);
+ assert.deepEqual(group.children.slice(0,-1).map(child=>Array.from((child as THREE.InstancedMesh).instanceMatrix.array)),before);
+ skyline.dispose();assert.equal(scene.children.length,0);
 });

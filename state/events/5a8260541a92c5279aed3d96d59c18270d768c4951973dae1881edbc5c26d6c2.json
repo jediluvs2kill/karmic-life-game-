@@ -1,0 +1,27 @@
+{
+  "id": "contribution:5b97f2b6-09c2-442c-ae99-e67512cff587",
+  "date": "2026-09-22",
+  "title": "Whole-sea fleets and clearer world map",
+  "summary": "Expanded the public fantasy fleet to eight unique boats patrolling all four visible seas, added a 28-spire animated rainbow skyline, collapsed minor idea labels into hoverable pins, raised overlay contrast, and brightened the active navigation state.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/trippy-skyline.ts"
+  }
+}
