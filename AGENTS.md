@@ -25,3 +25,7 @@ The canonical public origin is https://github.com/jediluvs2kill/karmic-life-game
 Claude and other agents use the same event ledger and truth rules. See [CLAUDE.md](CLAUDE.md) for a concrete clone, run, record, and review workflow. Work on a focused branch when changes need review. Read the current status before editing, preserve other agents' uncommitted work, and include the reproducible model source, GLB, feature catalogue, and attributed footprint in a coherent change. Use normal pushes and pull requests; never force an overwrite or silently choose a conflict side. Tests and the production build must pass before merge.
 
 Keep each building tied to its actual idea with a visible name and useful subtitle. NPC motion, play, and work scenes are fantasy representation unless a separate attributed agent job has actually run. No instruction file itself connects an AI account or makes an agent work continuously.
+
+## Named releases
+
+Every shipped version needs a semantic version, memorable name, visible in-game badge and RELEASES.md notes. Update package.json, package-lock.json and src/release.ts together. Keep save schemas independent and future features visibly planned.

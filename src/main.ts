@@ -14,6 +14,7 @@ import {connectRepository,type SyncStatus} from './repository';
 import {watchNpcMinds,type NpcMindState} from './npc-minds';
 import {miniMapOutlinePath} from './island-shape';
 import {createGameHud} from './game-hud';
+import {release,releaseTitle,roadmap} from './release';
 
 const app=document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML=`
@@ -91,7 +92,7 @@ $('world').addEventListener('world-assets-ready',e=>{thumbnails.clear();render()
 document.addEventListener('click',e=>{const el=(e.target as HTMLElement).closest<HTMLElement>('[data-day],[data-snapshot],[data-browse-zone]');if(!el)return;const d=el.dataset.day??el.dataset.snapshot;if(d&&dates.includes(d)){selectSnapshot(d);if($<HTMLDialogElement>('modal').open)$<HTMLDialogElement>('modal').close();}if(el.dataset.browseZone)showDistrict(el.dataset.browseZone as ZoneId);});
 for(const [id,step]of [['calendar-prev',-1],['calendar-next',1]] as const)$(id).onclick=()=>{const m=new Date(calendarMonth+'-01T12:00:00');m.setMonth(m.getMonth()+step);calendarMonth=m.getFullYear()+'-'+String(m.getMonth()+1).padStart(2,'0');renderCalendar();};
 $('nav-world').onclick=()=>{document.body.classList.remove('archive-open');$('nav-world').classList.add('rail-active');$('nav-archive').classList.remove('rail-active');closeDistrict();world?.home();};
-$('nav-archive').onclick=()=>{const open=document.body.classList.toggle('archive-open');$('nav-archive').classList.toggle('rail-active',open);$('nav-world').classList.toggle('rail-active',!open);closeDistrict();if(open)renderSnapshots();};
+$('nav-archive').onclick=()=>{world?.stopWalking();const open=document.body.classList.toggle('archive-open');$('nav-archive').classList.toggle('rail-active',open);$('nav-world').classList.toggle('rail-active',!open);closeDistrict();if(open)renderSnapshots();};
 $('archive-import').onclick=showImport;
 $('map-overview').onclick=()=>{closeDistrict();world?.archipelago();};
 $('nav-calendar').onclick=()=>modal(`<div class="eyebrow">YOUR WORLD THROUGH TIME</div><h2>Snapshot calendar</h2><p>Choose a saved date to revisit the island as it was.</p><div class="atlas">${dates.map(d=>`<button class="atlas-item" data-day="${d}"><strong>${formatDate(d)}</strong><small>${save.events.filter(e=>e.date<=d).length} memories</small></button>`).join('')}</div>`);
@@ -130,10 +131,14 @@ function showCameraSettings(){
  $('setting-effects').onclick=()=>effectsButton.click();
  $('setting-home').onclick=()=>{$<HTMLDialogElement>('modal').close();closeDistrict();world?.home();};
 }
-gameHud=createGameHud({projects:()=>projectsAt(save,date),selected:()=>activeProject,visit:showProject,overview:()=>{closeDistrict();world?.archipelago();},upgrade:showWork,rotate:angle=>world?.rotate(angle),topView:()=>world?.topView(),settings:showCameraSettings});
+gameHud=createGameHud({projects:()=>projectsAt(save,date),selected:()=>activeProject,visit:showProject,overview:()=>{closeDistrict();world?.archipelago();},upgrade:showWork,rotate:angle=>world?.rotate(angle),topView:()=>world?.topView(),settings:showCameraSettings,releases:showReleases});
 $('mini-map-content').addEventListener('click',e=>{
  const marker=(e.target as Element).closest<SVGElement>('[data-map-project]');if(marker){showProject(marker.dataset.mapProject!);return;}
  const svg=$('mini-map-content').querySelector('svg');if(!svg)return;const matrix=svg.getScreenCTM();if(!matrix)return;
  const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(matrix.inverse());closeDistrict();world?.focusPoint(p.x-48,p.y-46);
 });
 $('mini-map-content').addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const marker=(e.target as Element).closest<SVGElement>('[data-map-project]');if(marker){e.preventDefault();showProject(marker.dataset.mapProject!);}});
+
+function showReleases(){
+ modal(`<div class="eyebrow">YOUR CIVILIZATION · NAMED RELEASES</div><h2>${releaseTitle}</h2><p>Released ${release.date}. Choose a resident and walk the island with WASD / arrows, Shift to run, Space to hop, drag to look, and Escape to return to the overview.</p><div class="notice">Walking is fictional play. It never creates work records or upgrades an invention. Residents resume their routines when you leave.</div><h3>Next chapters</h3>${roadmap.map(item=>`<article class="event"><h3>v${item.version} · ${item.name}</h3><small>${item.status} · User idea · Not available yet</small><p>${item.description}</p></article>`).join('')}<p class="fine-print">Every release gets a version number, a name and repository release notes. Planned versions can change as the work develops.</p>`);
+}

@@ -1,15 +1,17 @@
 import type {LivingProject} from './projects';
 import {progression} from './progression';
 import './game-hud.css';
+import {release,releaseTitle} from './release';
 
 type HudOptions={
  projects:()=>LivingProject[]; selected:()=>string|undefined;
  visit:(id:string)=>void; overview:()=>void; upgrade:(id:string)=>void;
  rotate:(angle:number)=>void; topView:()=>void;
- settings:()=>void;
+ settings:()=>void; releases:()=>void;
 };
 export function createGameHud(options:HudOptions){
  const shell=document.querySelector('.shell')!;
+ const badge=document.createElement('button');badge.className='release-badge';badge.textContent='OS v'+release.version+' · '+release.name;badge.title=releaseTitle+' · Release history and roadmap';badge.onclick=options.releases;shell.append(badge);document.title=releaseTitle;
  const navigator=document.createElement('section');navigator.className='navigation-hud';navigator.setAttribute('aria-label','Invention navigator');
  navigator.innerHTML='<span class="hud-mode">EXPLORE</span><button data-prev aria-label="Previous invention">‹</button><label><span class="sr-only">Travel to an invention</span><select aria-label="Travel to an invention"><option value="">Choose any invention…</option></select></label><button data-next aria-label="Next invention">›</button><button data-focus title="Return to the selected invention" aria-label="Focus selected invention">◎</button>';
  shell.append(navigator);

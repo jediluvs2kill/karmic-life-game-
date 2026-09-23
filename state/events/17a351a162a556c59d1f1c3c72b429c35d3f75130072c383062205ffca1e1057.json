@@ -1,0 +1,27 @@
+{
+  "id": "contribution:efbbd62a-914c-4d28-b1da-4fd0baaafd3e",
+  "date": "2026-09-23",
+  "title": "Island Walker v0.2.0",
+  "summary": "Added control of fictional residents, terrain-constrained movement, follow camera, return to routines and named OS releases. Public suite: 42 tests pass; production build passes. Island Visits and Shared Worlds remain planned.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "RELEASES.md"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "contribution:9cb85f52-b913-4c57-a12e-05c6abbd3244",
+  "date": "2026-09-23",
+  "title": "Island Visits and Shared Worlds roadmap",
+  "summary": "Proposed future releases for visiting other islands and collaborating with host permission. These features are planned and not live multiplayer.",
+  "zone": "home",
+  "kind": "idea",
+  "sourceTitle": "Product direction, 23 September 2026",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "User",
+  "truthState": "USER_IDEA"
+}
