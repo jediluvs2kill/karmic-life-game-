@@ -5,6 +5,19 @@ package-lock.json, src/release.ts and these notes aligned. Show the current rele
 in the game and document changes before committing. Save schema versions are
 independent of app versions; never reset history when updating a release.
 
+## v0.2.3 — Signature Streets · 23 September 2026
+
+Truth state: COMPLETED_BUILD.
+
+- Replaced floating project cards and star pins with physical entrance nameplates:
+  brass frames, grounded mounts, district accents, names and subtitles.
+- Signs have fixed world dimensions and perspective, are occluded by buildings,
+  and remain visible in resident walking mode. Zoom closer to read smaller places.
+- Removed floating geography cards. Invention navigation and direct building/sign
+  selection still open project details; the label toggle now hides physical signs.
+- Paginated texture atlases batch the lettering; their GPU textures are released
+  on world rebuild. Project assets, addresses, evidence and progress are unchanged.
+
 ## v0.2.2 — Himalayan Galleries · 23 September 2026
 
 Truth state: COMPLETED_BUILD. Geography, galleries and NPC visits are FANTASY_WORLD scenery.

@@ -73,3 +73,7 @@ As reserved ground slots fill, each future idea keeps its own model and gains a
 stable upper-floor address in its district. Existing buildings and the coastline
 stay in place. Exhibition visits do not create evidence or upgrade projects.
 See [RELEASES.md](RELEASES.md) for controls, limits and validation.
+
+### Signature Streets · OS v0.2.3
+
+Building names and subtitles are physically mounted at their entrances, with brass frames and district accents. Zoom closer to read them. Click a building or its plaque to inspect the idea; the invention navigator remains available for keyboard selection. The nameplate toggle hides the signs. Floating project pins and geography cards have been removed.

@@ -1,0 +1,27 @@
+{
+  "id": "contribution:9e98c390-dae1-4afd-8d27-0f136d32bd9c",
+  "date": "2026-09-23",
+  "title": "Signature Streets v0.2.3",
+  "summary": "Replaced floating project icons and name cards with physical brass-framed entrance plaques containing each idea name and subtitle. Added batched texture atlases, grounded mounts and direct sign selection. Public validation: 48 tests and production build pass.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "RELEASES.md"
+  }
+}

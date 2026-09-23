@@ -43,3 +43,5 @@ contains pure floor/collision/visitor rules, and `src/gallery-renderer.ts` is th
 Three.js adapter. Floor visits and exhibition copies are session-only fantasy,
 never evidence or work. Preserve return-to-island positions and reduced motion.
 The Dream Lab's reserved display is empty capacity, not a claimed invention.
+
+Building names belong on physical entrance plaques (`src/building-signs.ts`), not floating DOM cards or star pins. Preserve names/subtitles, world scale, depth occlusion, batched text atlases and texture disposal on rebuild. The invention navigator provides accessible selection.
