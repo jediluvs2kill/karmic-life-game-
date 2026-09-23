@@ -1,0 +1,27 @@
+{
+  "id": "contribution:8d1572bc-c9bd-4bd9-9b80-e9ac62d2dc4b",
+  "date": "2026-09-23",
+  "title": "Proof XP, day count, and HUD fixes",
+  "summary": "Header XP now counts only prototype, test, and shipped work (research and design earn 0). Day numbers count from 1 Sep. Walk panel collapses by default, date sits in a solid chip, all 9 phone nav buttons fit, and GitHub sync keeps you on the newest day so walking stays enabled.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Claude contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Claude",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/ui-fixes.css"
+  }
+}

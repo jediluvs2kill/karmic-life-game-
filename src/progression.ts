@@ -10,3 +10,7 @@ export function progression(events:LifeEvent[]){
  const milestone=Math.max(1,...work.map(e=>({research:2,design:3,prototype:4,test:5,shipped:6}[e.work!.type])));
  const level=Math.max(milestone,1+Math.min(5,points));return {level,points,sessions:work.length,stage:['Idea seed','Research cabin','Design studio','Prototype workshop','Testing laboratory','Innovation landmark'][level-1]};
 }
+
+/** Fantasy build XP: attributed prototype/test/shipped records, never claimed real-life achievements. */
+export const xpByWork:Record<WorkType,number>={research:0,design:0,prototype:2,test:2,shipped:3};
+export function proofXP(events:LifeEvent[]){return events.reduce((sum,e)=>sum+(e.work?.evidence.trim()?xpByWork[e.work.type]:0),0);}

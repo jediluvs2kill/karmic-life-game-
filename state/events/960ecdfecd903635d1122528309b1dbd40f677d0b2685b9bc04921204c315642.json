@@ -1,0 +1,27 @@
+{
+  "id": "contribution:36071ac1-3355-470d-a3ff-40927e441a16",
+  "date": "2026-09-23",
+  "title": "Golden Hour v0.2.4",
+  "summary": "Golden-hour sky dome and matched fog, coastline-aware ocean with foam and glints, level beacons over inventions with recorded work, walk-mode hiding of props that block the resident, opening fly-in, HUD fade while moving, sharper high-DPI rendering and colour grade. Verified in a headless browser; frame rate on real GPUs not measured here.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Claude contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Claude",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "src/graphics.ts"
+  }
+}

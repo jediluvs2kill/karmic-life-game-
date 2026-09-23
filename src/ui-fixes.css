@@ -1,0 +1,25 @@
+/* Collapsible walk panel: closed by default so the island stays visible */
+.walk-hud-toggle{display:block;width:100%;margin:0;padding:6px 12px;background:none;border:0;color:#d0e4e5;font:inherit;font-size:11px;letter-spacing:.4px;cursor:pointer;text-align:center}
+.walk-hud-toggle b{display:inline-block;margin-left:4px;transition:transform .2s}
+.walk-hud:not(.collapsed) .walk-hud-toggle b{transform:rotate(180deg)}
+.walk-hud.collapsed{padding:2px 4px;width:auto}
+.walk-hud.collapsed>:not(.walk-hud-toggle){display:none!important}
+.walking-island .walk-hud-toggle{display:none}
+/* Date gets a solid chip so 3D signs behind it can't collide */
+#stage-date{background:#092735f0;border:1px solid #63949c91;border-radius:999px;padding:4px 10px;color:#e6f2f2;text-shadow:none}
+/* Phone: all 9 nav buttons fit, no hidden Map/Upgrade/Settings */
+@media(max-width:700px){
+ .archive-rail nav{overflow-x:visible!important;display:flex!important;justify-content:space-between;gap:1px!important}
+ .archive-rail nav button{flex:1 1 0!important;min-width:0!important;width:auto!important;padding-left:0!important;padding-right:0!important;font-size:15px!important}
+ .archive-rail nav button span{font-size:7.5px;letter-spacing:0;white-space:nowrap}
+}
+/* Declutter: side panels fade while the camera moves, then return */
+.quest-panel,.activity-panel,.mini-map,.release-badge,.footer,.camera-hud p{transition:opacity .45s ease,transform .45s ease}
+.camera-moving .quest-panel,.camera-moving .activity-panel{opacity:.12;transform:translateY(4px);pointer-events:none}
+.camera-moving .mini-map,.camera-moving .release-badge,.camera-moving .footer,.camera-moving .camera-hud p{opacity:.2}
+@media(prefers-reduced-motion:reduce){.quest-panel,.activity-panel,.mini-map,.release-badge,.footer,.camera-hud p{transition:none}}
+
+.walk-camera-controls{display:flex;align-items:center;gap:6px;margin-top:6px}
+.walk-camera-controls[hidden]{display:none}
+.walk-camera-controls button{background:#183b46;border:1px solid #829f9a;border-radius:6px;color:#efffff;padding:5px 10px;cursor:pointer}
+.walk-camera-controls span{font-size:10px;color:#e0eeeb}

@@ -5,6 +5,26 @@ package-lock.json, src/release.ts and these notes aligned. Show the current rele
 in the game and document changes before committing. Save schema versions are
 independent of app versions; never reset history when updating a release.
 
+## v0.2.6 — Golden Path · 23 September 2026
+
+Truth state: COMPLETED_BUILD. The rendered world and build XP are fantasy progression.
+
+- Integrated Claude's downloaded Golden Hour graphics: golden daylight/night sky,
+  coastline-following foam, water glints, optional colour grading and work beacons.
+- Walking keeps the player's chosen pitch and heading across slopes, bridges and
+  lifts. Obstructions shorten the camera boom along that angle; they cannot force
+  an overhead view. Terrain height and zoom ease smoothly, with reduced-motion support.
+- Added walking zoom buttons and Reset look. Scroll accepts mouse and trackpad wheel
+  units. Gallery visits preserve zoom/angle; close obstructions hide only the possessed
+  avatar. Trees blocking the view restore correctly on exit/rebuild; bridges stay intact.
+- Collapsed resident picker, clearer date chip and compact mobile navigation. Build XP
+  counts evidence-referenced prototype/test/shipped records; existing research-driven
+  building progression, dates, project addresses and event IDs remain unchanged.
+- Preserved Claude's original event/footprint attribution. His older v0.2.4 metadata,
+  September-only day epoch and opening camera fly-in were not applied over newer work.
+- Previous rollback tag: v0.2.3-pre-golden-path. Recover with a reviewed revert or separate
+  worktree; preserve all later event history. No forced pushes or save-schema change.
+
 ## v0.2.3 — Signature Streets · 23 September 2026
 
 Truth state: COMPLETED_BUILD.

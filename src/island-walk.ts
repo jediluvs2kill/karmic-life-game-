@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {footHeight,type createInhabitants} from './inhabitants.ts';
 import {canStand,stepWalker,type Walker} from './resident-control.ts';
+import {walkZoom,followHeight,boomDirection,clearBoomDistance,followBoom} from './walk-camera.ts';
 import {gsap} from 'gsap';
 import {galleryTiles,galleryHeight,galleryEntrance,type IdeaGallery} from './idea-galleries.ts';
 
@@ -10,18 +11,22 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
  let walker:Walker|undefined,yaw=0,pitch=.32,distance=7,residentName='';
  let gallery:IdeaGallery|undefined,level=1,returnWalker:Walker|undefined,lift:{from:number;to:number;t:number}|undefined;
  let deckTiles=new Set<string>();
+ let followY:number|undefined,effectiveDistance=7;
  let previous:{position:THREE.Vector3;target:THREE.Vector3}|undefined;
  let drag:{id:number;x:number;y:number}|undefined,jump=false;
  const keys=new Set<string>(),taps=new Set<string>(),look=new THREE.Vector3(),desired=new THREE.Vector3(),ray=new THREE.Raycaster();
  const shell=host.closest('.shell')!;
- const panel=document.createElement('section');panel.className='walk-hud';panel.setAttribute('aria-label','Control a resident');
- panel.innerHTML='<div class="walk-picker"><label><span class="sr-only">Choose a resident</span><select aria-label="Choose a resident"></select></label><button class="walk-toggle" aria-pressed="false">Walk the island</button></div><p class="walk-hint" hidden>WASD / arrows · Shift run · Space hop · Drag to look · Scroll zoom · Esc exit</p><div class="gallery-picker"><select aria-label="Choose an idea mall"></select><button class="gallery-enter">Visit idea mall</button></div><div class="gallery-controls" hidden><select aria-label="Choose a gallery floor"></select><button class="gallery-lift">Take lift</button><button class="gallery-exit">Return to island</button></div><output class="walk-status" aria-live="polite"></output>';
+ const panel=document.createElement('section');panel.className='walk-hud collapsed';panel.setAttribute('aria-label','Control a resident');
+ panel.innerHTML='<button class="walk-hud-toggle" aria-expanded="false">🚶 Walk &amp; idea malls <b>▾</b></button><div class="walk-picker"><label><span class="sr-only">Choose a resident</span><select aria-label="Choose a resident"></select></label><button class="walk-toggle" aria-pressed="false">Walk the island</button></div><p class="walk-hint" hidden>WASD / arrows · Shift run · Space hop · Drag to look · Scroll zoom · Esc exit</p><div class="gallery-picker"><select aria-label="Choose an idea mall"></select><button class="gallery-enter">Visit idea mall</button></div><div class="gallery-controls" hidden><select aria-label="Choose a gallery floor"></select><button class="gallery-lift">Take lift</button><button class="gallery-exit">Return to island</button></div><div class="walk-camera-controls" hidden><button class="walk-zoom-in" aria-label="Walk zoom in">＋</button><button class="walk-zoom-out" aria-label="Walk zoom out">−</button><button class="walk-reset">Reset look</button><span>Drag to look · scroll to zoom</span></div><output class="walk-status" aria-live="polite"></output>';
  shell.append(panel);
- const select=panel.querySelector<HTMLSelectElement>('.walk-picker select')!,toggle=panel.querySelector<HTMLButtonElement>('button')!,status=panel.querySelector('output')!,hint=panel.querySelector<HTMLElement>('.walk-hint')!;
+ const hudToggle=panel.querySelector<HTMLButtonElement>('.walk-hud-toggle')!;
+ const setCollapsed=(c:boolean)=>{panel.classList.toggle('collapsed',c);hudToggle.setAttribute('aria-expanded',String(!c));};
+ hudToggle.onclick=()=>setCollapsed(!panel.classList.contains('collapsed'));
+ const select=panel.querySelector<HTMLSelectElement>('.walk-picker select')!,toggle=panel.querySelector<HTMLButtonElement>('.walk-toggle')!,status=panel.querySelector('output')!,hint=panel.querySelector<HTMLElement>('.walk-hint')!;
  const towerSelect=panel.querySelector<HTMLSelectElement>('.gallery-picker select')!,floorSelect=panel.querySelector<HTMLSelectElement>('.gallery-controls select')!,enter=panel.querySelector<HTMLButtonElement>('.gallery-enter')!,liftButton=panel.querySelector<HTMLButtonElement>('.gallery-lift')!,floorControls=panel.querySelector<HTMLElement>('.gallery-controls')!;
  function leaveGallery(){
   if(!gallery)return;
-  if(returnWalker)walker={...returnWalker};gallery=undefined;lift=undefined;returnWalker=undefined;clearInput();options.visitGallery();floorControls.hidden=true;panel.querySelector<HTMLElement>('.gallery-picker')!.hidden=false;
+  followY=undefined;if(returnWalker)walker={...returnWalker};gallery=undefined;lift=undefined;returnWalker=undefined;clearInput();options.visitGallery();floorControls.hidden=true;panel.querySelector<HTMLElement>('.gallery-picker')!.hidden=false;
   status.textContent='Back on the island. Continue exploring.';host.focus({preventScroll:true});report();update(0);
  }
  function ride(levelNumber:number){
@@ -36,7 +41,7 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
   if(!walker&&!start())return;
   if(gallery)leaveGallery();returnWalker={...walker!};gallery=destination;deckTiles=galleryTiles(gallery);level=gallery.floors[0].level;
   floorSelect.replaceChildren(...gallery.floors.map(f=>new Option('Floor '+f.level+' · '+f.name,String(f.level))));
-  floorControls.hidden=false;panel.querySelector<HTMLElement>('.gallery-picker')!.hidden=true;pitch=.45;distance=6;
+  floorControls.hidden=false;panel.querySelector<HTMLElement>('.gallery-picker')!.hidden=true;followY=undefined;
   ride(level); // Quick travel to the gallery entrance; later buttons use its vertical lift.
  }
  enter.onclick=enterGallery;liftButton.onclick=()=>ride(Number(floorSelect.value));panel.querySelector<HTMLButtonElement>('.gallery-exit')!.onclick=leaveGallery;
@@ -46,7 +51,7 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
   if(!walker)return;
   leaveGallery();residents.releaseControl();walker=undefined;clearInput();controls.enabled=true;
   if(restore&&previous){camera.position.copy(previous.position);controls.target.copy(previous.target);controls.update();}
-  previous=undefined;select.disabled=false;toggle.textContent='Walk the island';toggle.setAttribute('aria-pressed','false');hint.hidden=true;status.textContent='Resident returned to their routine.';document.body.classList.remove('walking-island');report();
+  previous=undefined;select.disabled=false;toggle.textContent='Walk the island';toggle.setAttribute('aria-pressed','false');hint.hidden=true;panel.querySelector<HTMLElement>('.walk-camera-controls')!.hidden=true;status.textContent='Resident returned to their routine.';document.body.classList.remove('walking-island');report();
  }
  function start(id=select.value){
   if(!options.live()){status.textContent='Return to the latest saved day to walk with residents.';return false;}
@@ -59,9 +64,9 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
   previous={position:camera.position.clone(),target:controls.target.clone()};
   // Flush any pending orbit damping before handing the camera to walking mode.
   const damping=controls.enableDamping;controls.enableDamping=false;controls.update();controls.enableDamping=damping;controls.enabled=false;
-  yaw=Math.atan2(controls.target.x-camera.position.x,controls.target.z-camera.position.z);pitch=.32;distance=7;
+  yaw=Math.atan2(controls.target.x-camera.position.x,controls.target.z-camera.position.z);pitch=.32;distance=7;effectiveDistance=7;followY=undefined;
   walker={x:pose.x,z:pose.z,yaw,gait:0,hop:0,hopVelocity:0,moving:false};
-  residentName=residents.roster.find(r=>r.id===id)?.name??'Resident';select.value=id;select.disabled=true;toggle.textContent='Exit walk · Esc';toggle.setAttribute('aria-pressed','true');hint.hidden=false;status.textContent='You are '+residentName+'. Click the world to move.';document.body.classList.add('walking-island');host.focus({preventScroll:true});report();update(0);return true;
+  residentName=residents.roster.find(r=>r.id===id)?.name??'Resident';select.value=id;select.disabled=true;toggle.textContent='Exit walk · Esc';toggle.setAttribute('aria-pressed','true');hint.hidden=false;panel.querySelector<HTMLElement>('.walk-camera-controls')!.hidden=false;status.textContent='You are '+residentName+'. Click the world to move.';document.body.classList.add('walking-island');setCollapsed(false);host.focus({preventScroll:true});report();update(0);return true;
  }
  function refresh(){
   const id=select.value;select.replaceChildren(...residents.roster.map(r=>new Option(r.name+' · '+r.role,r.id)));if(residents.roster.some(r=>r.id===id))select.value=id;
@@ -82,7 +87,7 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
  host.addEventListener('pointermove',e=>{if(!walker||!drag||drag.id!==e.pointerId)return;yaw-=(e.clientX-drag.x)*.005;pitch=THREE.MathUtils.clamp(pitch+(e.clientY-drag.y)*.004,.08,1.15);drag.x=e.clientX;drag.y=e.clientY;});
  const endDrag=()=>{drag=undefined;};host.addEventListener('pointerup',endDrag);host.addEventListener('pointercancel',endDrag);host.addEventListener('lostpointercapture',endDrag);
  host.addEventListener('contextmenu',e=>{if(walker)e.preventDefault();});
- host.addEventListener('wheel',e=>{if(!walker)return;e.preventDefault();distance=THREE.MathUtils.clamp(distance*Math.exp(e.deltaY*.001),2.8,14);},{passive:false});
+ host.addEventListener('wheel',e=>{if(!walker)return;e.preventDefault();distance=walkZoom(distance,e.deltaY,e.deltaMode,host.clientHeight);},{passive:false});
  function update(dt:number){
   if(!walker)return;
   if(document.activeElement!==host)clearInput();
@@ -91,21 +96,26 @@ export function createIslandWalk(host:HTMLElement,camera:THREE.PerspectiveCamera
   walker=stepWalker(walker,{forward:Number(pressed('w')||pressed('arrowup'))-Number(pressed('s')||pressed('arrowdown')),right:Number(pressed('d')||pressed('arrowright'))-Number(pressed('a')||pressed('arrowleft')),yaw,run:pressed('shift'),jump},lift?0:dt,gallery?deckTiles:options.tiles());jump=false;taps.clear();
   const ground=gallery?(lift?lift.from+(lift.to-lift.from)*(lift.t*lift.t*(3-2*lift.t)):galleryHeight(gallery,level)):footHeight(walker);
   residents.moveControlled({...walker,y:ground+walker.hop,gait:options.reduced?0:walker.moving?Math.sin(walker.gait):0,gesture:0});
-  // Follow the ground, not the hop: no camera bounce, including reduced-motion mode.
-  look.set(walker.x,ground+1.3,walker.z);
-  desired.set(walker.x-Math.sin(yaw)*distance*Math.cos(pitch),look.y+Math.sin(pitch)*distance,walker.z-Math.cos(yaw)*distance*Math.cos(pitch));
-  ray.set(look,desired.clone().sub(look).normalize());ray.far=look.distanceTo(desired);
+  // Translate target and camera together on slopes/bridges; hops never steer the view.
+  followY=followHeight(followY,ground+1.3,dt,options.reduced);
+  look.set(walker.x,followY,walker.z);
+  const direction=boomDirection(yaw,pitch);
+  desired.set(direction.x,direction.y,direction.z);
+  ray.set(look,desired);ray.far=distance;
   const hit=(gallery?[]:ray.intersectObjects(options.obstacles(),false))[0];
-  if(hit){
-   if(hit.distance>=3.5)desired.copy(look).addScaledVector(ray.ray.direction,hit.distance-.3);
-   else{
-    // Narrow streets need height, not a camera pushed inside the resident's head.
-    // Project proxies are eight units tall and centered three above their ground.
-    desired.copy(look).add(new THREE.Vector3(-Math.sin(yaw)*4,Math.max(7,hit.object.position.y+4.6-look.y),-Math.cos(yaw)*4));
-   }
-  }
-  desired.y=Math.max(desired.y,(gallery?ground:footHeight({x:desired.x,z:desired.z}))+.6);
-  camera.position.copy(desired);camera.lookAt(look);controls.target.copy(look);report();
+  const clearance=clearBoomDistance(look,direction,distance,(x,z)=>gallery?ground:footHeight({x,z}),hit?.distance);
+  effectiveDistance=followBoom(effectiveDistance,distance,clearance,dt,options.reduced);
+  desired.copy(look).addScaledVector(ray.ray.direction,effectiveDistance);
+  residents.setControlledVisible(effectiveDistance>1.1);
+  camera.position.copy(desired);camera.lookAt(look);controls.target.copy(look);
+  host.dataset.walkPitch=pitch.toFixed(4);host.dataset.walkYaw=yaw.toFixed(4);
+  host.dataset.walkZoom=distance.toFixed(3);host.dataset.walkCameraDistance=effectiveDistance.toFixed(3);
+  host.dataset.walkCameraPitch=Math.asin((camera.position.y-look.y)/effectiveDistance).toFixed(4);report();
  }
- report();return {start,stop,refresh,update,get active(){return !!walker;}};
+ function zoom(amount:number){distance=THREE.MathUtils.clamp(distance*amount,2,18);}
+ function rotate(angle:number){yaw+=angle;}
+ panel.querySelector<HTMLButtonElement>('.walk-zoom-in')!.onclick=()=>{zoom(.8);host.focus({preventScroll:true});};
+ panel.querySelector<HTMLButtonElement>('.walk-zoom-out')!.onclick=()=>{zoom(1.25);host.focus({preventScroll:true});};
+ panel.querySelector<HTMLButtonElement>('.walk-reset')!.onclick=()=>{pitch=.32;distance=7;host.focus({preventScroll:true});};
+ report();return {start,stop,refresh,update,zoom,rotate,get active(){return !!walker;}};
 }

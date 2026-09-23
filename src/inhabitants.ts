@@ -100,13 +100,14 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
  const balls=batch('playground balls',new THREE.SphereGeometry(1,10,8),2);
  let residents:ResidentPlan[]=[];
  let controlled:{id:string;pose:ResidentPose}|undefined;
+ let controlledVisible=true;const hiddenMatrix=new THREE.Matrix4().makeScale(0,0,0);
  const latest=new Map<string,ResidentPose>(),clocks=new Map<string,number>();
  const returning=new Map<string,{pose:ResidentPose;path:Point[]}>();
  function release(){
   if(!controlled)return;
   const resident=residents.find(r=>r.id===controlled!.id);
   if(resident){const pose={...controlled.pose,y:footHeight(controlled.pose),gait:0,gesture:0,moving:false};returning.set(resident.id,{pose,path:walkGrid(pose,resident.route[0],tiles)});}
-  controlled=undefined;
+  controlled=undefined;controlledVisible=true;
  }
  let tiles=new Set<string>();
  let minds=new Map<string,NpcDecision>();
@@ -127,7 +128,7 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
   matrix.compose(position,rotation,scale.set(1,length,1));mesh.setMatrixAt(index,matrix);
  }
  function rebuild(projects:LivingProject[],walkable:Set<string>){
-  controlled=undefined;returning.clear();latest.clear();clocks.clear();tiles=walkable;residents=planInhabitants(projects,walkable);for(const mesh of meshes)mesh.count=0;
+  controlled=undefined;controlledVisible=true;returning.clear();latest.clear();clocks.clear();tiles=walkable;residents=planInhabitants(projects,walkable);for(const mesh of meshes)mesh.count=0;
   residents.forEach((resident,i)=>{
    tint(torso,i,resident.color);tint(head,i,['#d0a17b','#8a5942','#edc4a0','#ac7955'][i%4]);tint(hat,i,resident.role==='builder'?'#ffd66b':resident.role==='gardener'?'#e7cf91':'#294657');
    for(let side=0;side<2;side++){const k=i*2+side;tint(arms,k,resident.color);tint(legs,k,i%2?'#294a70':'#454661');tint(shoes,k,'#f7ead2');tint(eyes,k,'#1b2b39');}
@@ -157,6 +158,7 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
   residents.forEach((resident,i)=>latest.set(resident.id,{...poses[i]}));
   residents.forEach((resident,i)=>{
    const pose=poses[i],possessed=controlled?.id===resident.id,mind=possessed?undefined:minds.get(resident.id),working=!possessed&&!pose.moving&&(mind?['build','garden','inspect'].includes(mind.action):resident.role==='builder'||resident.role==='gardener'),playing=!possessed&&!pose.moving&&(mind?mind.action==='play':resident.role==='player'),greeting=!possessed&&!pose.moving&&mind?.action==='greet';
+   if(possessed&&!controlledVisible){for(const mesh of [torso,head,hat])mesh.setMatrixAt(i,hiddenMatrix);for(const mesh of [arms,legs,shoes,eyes])for(let side=0;side<2;side++)mesh.setMatrixAt(i*2+side,hiddenMatrix);return;}
    if(playing){const partner=residents.findIndex(other=>other.pair===resident.pair&&other.id!==resident.id);if(partner>=0)pose.yaw=Math.atan2(poses[partner].x-pose.x,poses[partner].z-pose.z);}
    const bounce=pose.moving?Math.abs(pose.gait)*(resident.role==='runner'?.11:.045):0;
    place(torso,i,pose,[0,1.03+bounce,0],[.26,.37,.17]);place(head,i,pose,[0,1.57+bounce,0],[.2,.22,.19]);place(hat,i,pose,[0,1.72+bounce,-.015],[.215,.105,.205]);
@@ -185,5 +187,6 @@ export function createInhabitants(scene:THREE.Scene,options:{reducedMotion?:bool
   takeControl(id:string){const pose=latest.get(id);if(!pose)return undefined;release();returning.delete(id);controlled={id,pose:{...pose}};return {...pose};},
   moveControlled(pose:ResidentPose){if(controlled){controlled.pose={...pose};latest.set(controlled.id,{...pose});}},
   releaseControl:release,
+  setControlledVisible(visible:boolean){controlledVisible=visible;},
   setMinds(decisions:NpcDecision[]){minds=new Map(decisions.map(decision=>[decision.id,decision]));},get count(){return residents.length;},get mindCount(){return minds.size;},dispose(){scene.remove(group);for(const mesh of meshes){mesh.geometry.dispose();mesh.dispose();}material.dispose();}};
 }
