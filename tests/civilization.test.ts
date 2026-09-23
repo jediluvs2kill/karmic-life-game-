@@ -1,3 +1,4 @@
+import {isCivilizationLand} from '../src/island-shape.ts';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -5,7 +6,7 @@ import {readFile} from 'node:fs/promises';
 import {NodeIO} from '@gltf-transform/core';
 import {getBounds} from '@gltf-transform/functions';
 import {inventionEvents} from '../src/inventory.ts';
-import {projectsAt,projectPosition} from '../src/projects.ts';
+import {projectsAt,projectPosition,projectApproach} from '../src/projects.ts';
 import {landmarks} from '../src/civilization.ts';
 import {buildLandscape} from '../src/landscape.ts';
 import {walkGrid} from '../src/navigation.ts';
@@ -62,8 +63,8 @@ test('all 77 Blender idea buildings retain identity, grounded bounds, distinct g
 test('agents can reach every central landmark over rendered land without entering building footprints',()=>{
  const projects=projectsAt({events:inventionEvents},'2026-09-22'),tiles=buildLandscape(projects,()=>{},()=>true);
  for(const p of projects.filter(p=>landmarks[p.id])){
-  const location=projectPosition(p),end={x:location.x,z:location.z+6},path=walkGrid({x:-4,z:1},end,tiles);
-  assert.ok(path.length,'Unreachable landmark: '+p.id);assert.ok(Math.hypot(path.at(-1)!.x-end.x,path.at(-1)!.z-end.z)<4,'Destination too far from '+p.id);
+  const end=projectApproach(p),path=walkGrid({x:-4,z:1},end,tiles);
+  assert.ok(isCivilizationLand(end.x,end.z),'Entrance outside coastline: '+p.id);assert.ok(path.length,'Unreachable landmark: '+p.id);assert.ok(Math.hypot(path.at(-1)!.x-end.x,path.at(-1)!.z-end.z)<4,'Destination too far from '+p.id);
   for(const point of path)assert.ok(tiles.has(point.x+','+point.z));
  }
 });

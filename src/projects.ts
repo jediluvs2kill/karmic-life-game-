@@ -34,14 +34,28 @@ export function allocateProject(events:LifeEvent[],id:string,name:string,zone:Zo
  let plot=0;while(occupied.has(plot))plot++;
  return {id,name,zone,plot,motif,links:[]};
 }
+export const galleryFloorHeight=14;
+export function projectFloor(project:Pick<Project,'plot'|'zone'>&{id?:string}){
+ return project.id&&landmarks[project.id]?0:Math.floor(project.plot/districtCapacity[project.zone]);
+}
+/** A stable vertical address: later imports never move earlier floors or plots. */
+export function projectTowerId(project:Pick<Project,'plot'|'zone'>){return project.zone+':'+project.plot%districtCapacity[project.zone];}
+export function protectedPlots(){return [...continentPlots.values(),...Object.values(landmarks)];}
+/** A land-facing entrance; coastal landmarks must not ask residents to walk out to sea. */
+export function projectApproach(project:Pick<Project,'plot'|'zone'>&{id?:string}){
+ const pos=projectPosition(project),scale=(project.id&&landmarks[project.id]?.scale)||1;
+ for(const turn of [0,1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7,8]){
+  const angle=turn*Math.PI/8,point={x:Math.round(pos.x+Math.sin(angle)*3.4*scale),z:Math.round(pos.z+Math.cos(angle)*3.4*scale)};
+  if([[0,0],[1,0],[-1,0],[0,1],[0,-1]].every(([dx,dz])=>isCivilizationLand(point.x+dx,point.z+dz))&&protectedPlots().every(p=>Math.abs(p.x-point.x)>2||Math.abs(p.z-point.z)>2))return point;
+ }
+ return {x:pos.x,z:pos.z+3.4*scale};
+}
 export function projectPosition(project:Pick<Project,'plot'|'zone'>&{id?:string},_zone?:unknown){
  const landmark=project.id&&landmarks[project.id];
  if(landmark)return {x:landmark.x,y:groundHeight(landmark.x,landmark.z)+.15,z:landmark.z};
  // District neighborhoods now occupy the recognizable continent instead of a
  // circular ring. Plot numbers remain stable; only their visual coordinates move.
- const continent=continentPlots.get(project.zone+':'+project.plot);if(continent)return {...continent,y:.35};
- // Plots beyond the current continent keep expanding outward indefinitely.
- const zoneIndex=Math.max(0,districtOrder.indexOf(project.zone as typeof districtOrder[number])),angle=zoneIndex*Math.PI/6-Math.PI/2,radius=80+Math.floor(project.plot/3)*14,lane=(project.plot%3-1)*8.5;
- return {x:Math.cos(angle)*radius-Math.sin(angle)*lane,y:.35,z:Math.sin(angle)*radius+Math.cos(angle)*lane};
+ const continent=continentPlots.get(projectTowerId(project))!;
+ return {...continent,y:.35+projectFloor(project)*galleryFloorHeight};
 }
 export function projectContext(project:LivingProject){return project.events.map(e=>`${e.date}${e.dateEnd?' to '+e.dateEnd:''}: ${e.title}. ${e.summary}`).join('\n').slice(-3000);}

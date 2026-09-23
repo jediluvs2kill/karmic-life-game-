@@ -1,0 +1,27 @@
+{
+  "id": "contribution:04858587-ac53-4391-b523-df55b5259f69",
+  "date": "2026-09-23",
+  "title": "Himalayan Galleries v0.2.2",
+  "summary": "Added stylized Himalayan peaks, a connected Ganga with bridges, permanent upper-floor idea addresses and an accessible gallery mall. Public validation: 48 tests and production build pass. Resident visits are fictional and do not create work events.",
+  "zone": "home",
+  "kind": "build",
+  "sourceTitle": "Codex contribution",
+  "project": {
+    "id": "karmic-life",
+    "name": "Karmic Life / Civilization OS",
+    "zone": "home",
+    "plot": 1,
+    "motif": "game",
+    "links": [
+      "agent-swarm",
+      "capture-memory",
+      "idea-evaluation"
+    ]
+  },
+  "actor": "Codex",
+  "truthState": "COMPLETED_BUILD",
+  "work": {
+    "type": "shipped",
+    "evidence": "RELEASES.md"
+  }
+}

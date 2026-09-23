@@ -5,6 +5,34 @@ package-lock.json, src/release.ts and these notes aligned. Show the current rele
 in the game and document changes before committing. Save schema versions are
 independent of app versions; never reset history when updating a release.
 
+## v0.2.2 — Himalayan Galleries · 23 September 2026
+
+Truth state: COMPLETED_BUILD. Geography, galleries and NPC visits are FANTASY_WORLD scenery.
+
+- A tall, snow-capped Himalayan range follows the northern edge. A stylized Ganga
+  runs from the foothills toward the eastern coast, around established plots,
+  with designated crossings rather than roads covering its water.
+- The continent no longer gains land discs or causeways for new ideas. Original
+  ground addresses, project IDs and plot numbers remain stable. After a district's
+  reserved ground plots fill, new ideas get upper floors at the same addresses,
+  retaining their own GLB, title, subtitle and evidence-driven upgrades.
+- Choose a resident, then **Visit idea mall**. Dream Lab has three upper galleries:
+  WindPanel and robotics exhibitions, followed by space reserved for future ideas.
+  These are exhibits of existing ideas, not new accomplishments. Future overflow
+  buildings appear in the same mall chooser with their actual project floors.
+- Select a floor and **Take lift**, then explore with WASD/arrows. Rails and collision
+  boundaries keep residents on decks; upper decks are cut away during a visit.
+  **Return to island** restores the resident's entry position. Escape leaves the
+  gallery first, then exits walking. Two fictional gallery visitors use the lift
+  and promenade automatically; reduced motion freezes their animation.
+- Coastal landmarks use land-facing approaches. Snow slopes are not walkable.
+  Walkers and agents still have connected routes to every main landmark.
+- Validation covers river continuity, coastline invariance, 5,000 unique future
+  addresses, deck collisions, visitor lift journeys and existing resident controls.
+  Address capacity is not a performance guarantee for rendering thousands of GLBs;
+  streaming and floor pagination remain future work. This is a stylized map, not
+  geographically surveyed terrain. Visits do not award progress or create events.
+
 ## v0.2.1 — True Directions · 23 September 2026
 
 Truth state: COMPLETED_BUILD.

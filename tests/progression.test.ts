@@ -1,3 +1,4 @@
+import {isCivilizationLand} from '../src/island-shape.ts';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {NodeIO} from '@gltf-transform/core';
@@ -15,9 +16,9 @@ test('ideas alone do not upgrade buildings; dated work entries do',()=>{
  assert.equal(progression([idea,research,prototype].filter(e=>e.date<'2026-10-01')).level,1);
  assert.throws(()=>validateEvent({...research,work:{type:'research',evidence:''}}));
 });
-test('every current project has a distinct asset and future plots expand without repositioning',async()=>{
+test('every current project has a distinct asset and future plots grow vertically without repositioning',async()=>{
  assert.equal(new Set(inventionProjects.map(assetName)).size,77);assert.equal(new Set(inventionProjects.map(p=>JSON.stringify(architecture(p)))).size,77);
  const locations=inventionProjects.map(projectPosition);for(let i=0;i<locations.length;i++)for(let j=i+1;j<locations.length;j++)assert.ok(Math.hypot(locations[i].x-locations[j].x,locations[i].z-locations[j].z)>6);
- const original=projectPosition(inventionProjects[0]),future=projectPosition({...inventionProjects[0],id:'future-invention',plot:999});assert.deepEqual(projectPosition(inventionProjects[0]),original);assert.ok(Math.hypot(future.x,future.z)>4000);
+ const original=projectPosition(inventionProjects[0]),future=projectPosition({...inventionProjects[0],id:'future-invention',plot:999});assert.deepEqual(projectPosition(inventionProjects[0]),original);assert.ok(isCivilizationLand(future.x,future.z));assert.ok(future.y>original.y);
  const doc=await new NodeIO().read('public/assets/projects/'+assetName(inventionProjects[0])+'.glb');assert.equal(doc.getRoot().listMeshes().length,1);assert.equal(doc.getRoot().listTextures().length,0);assert.equal(doc.getRoot().listNodes()[0].getExtras().projectId,inventionProjects[0].id);
 });

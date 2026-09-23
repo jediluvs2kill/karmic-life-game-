@@ -29,3 +29,17 @@ Keep each building tied to its actual idea with a visible name and useful subtit
 ## Named releases
 
 Every shipped version needs a semantic version, memorable name, visible in-game badge and RELEASES.md notes. Update package.json, package-lock.json and src/release.ts together. Keep save schemas independent and future features visibly planned.
+
+
+## Himalayan Galleries (v0.2.2)
+
+`src/geography.ts` owns the mountain clearance, connected Ganga cells and bridge
+crossings. `src/landscape.ts` may only create land within `isCivilizationLand`.
+Keep reserved plots clear of scenery and use `projectApproach` for land-facing
+entrances. Never renumber plot IDs or change district capacities: capacities now
+also determine permanent tower IDs and floor numbers. Each overflow project keeps
+its own GLB; galleries are architecture around that model. `src/idea-galleries.ts`
+contains pure floor/collision/visitor rules, and `src/gallery-renderer.ts` is their
+Three.js adapter. Floor visits and exhibition copies are session-only fantasy,
+never evidence or work. Preserve return-to-island positions and reduced motion.
+The Dream Lab's reserved display is empty capacity, not a claimed invention.

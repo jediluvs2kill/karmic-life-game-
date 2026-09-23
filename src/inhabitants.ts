@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-import {groundHeight,landmarks} from './civilization.ts';
+import {isGanga} from './geography.ts';
+import {groundHeight} from './civilization.ts';
 import {walkGrid} from './navigation.ts';
-import {projectPosition,type LivingProject} from './projects.ts';
+import {projectApproach,type LivingProject} from './projects.ts';
 import type {NpcDecision} from './npc-minds.ts';
 
 export type ResidentRole='runner'|'courier'|'builder'|'gardener'|'player';
@@ -42,13 +43,13 @@ export function planInhabitants(projects:LivingProject[],walkable:Set<string>,li
  const ordered=[...projects].sort((a,b)=>a.id.localeCompare(b.id));
  const count=Math.min(assignments.length,Math.max(0,Math.floor(limit)),Math.max(4,projects.length*3));
  return assignments.slice(0,count).flatMap(([role,preferred],i)=>{
-  const project=ordered.find(p=>p.id===preferred)??ordered[(i*7)%ordered.length],position=projectPosition(project),scale=landmarks[project.id]?.scale??1;
-  const front={x:position.x+(role==='player'?(i%2?2:-2):((i%3)-1)*1.3),z:position.z+3.2*scale};
+  const project=ordered.find(p=>p.id===preferred)??ordered[(i*7)%ordered.length];
+  const front=projectApproach(project);
   const start=walkGrid(front,front,paths)[0];if(!start)return [];
   let end={x:start.x+(i%2?5:-5),z:start.z+(i%3-1)*3};
   if(role==='courier'){
-   const destination=ordered.find(p=>p.id===assignments[(i+1)%12][1])??ordered[(i*7+1)%ordered.length],target=projectPosition(destination);
-   end={x:target.x,z:target.z+3.2*(landmarks[destination.id]?.scale??1)};
+   const destination=ordered.find(p=>p.id===assignments[(i+1)%12][1])??ordered[(i*7+1)%ordered.length];
+   end=projectApproach(destination);
   }else if(role==='builder'||role==='gardener')end={x:start.x+(i%2?2:-2),z:start.z+1};
   let route=role==='player'?[start]:walkGrid(start,end,paths);
   if(role!=='player'&&route.length<2){
@@ -62,9 +63,7 @@ export function planInhabitants(projects:LivingProject[],walkable:Set<string>,li
 
 // Decks sit above the river surface; normal roads sit just above the grass.
 export function footHeight(p:Point){
- const river=Math.abs(p.x-(5+Math.sin(p.z*.16)*2))<1.3&&p.z>-29&&p.z<37;
- const branch=p.z>=18&&p.z<=19&&p.x>6&&p.x<38;
- return groundHeight(p.x,p.z)+((river||branch)?.32:.09);
+ return groundHeight(p.x,p.z)+(isGanga(p.x,p.z)?.32:.09);
 }
 
 /** A closed, reversible walk over adjacent grid cells; no shortcuts across water or buildings. */

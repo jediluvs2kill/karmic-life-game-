@@ -31,7 +31,7 @@ Static hosting displays the world but does not run Git synchronization, agents, 
 
 ## World rules
 
-Every building represents an idea; 12 districts keep their addresses while new plots expand outward. Stable project IDs and GLB filenames preserve continuity. Recorded research, design, prototypes, tests, and shipped artifacts add visible upgrades. Idea mentions alone do not fabricate real achievements. Truth states distinguish concepts, hypotheses, prototypes, fantasy, verified outcomes, and completed software.
+Every building represents an idea; 12 districts keep their addresses while new plots fill reserved ground positions and then grow vertically. Stable project IDs and GLB filenames preserve continuity. Recorded research, design, prototypes, tests, and shipped artifacts add visible upgrades. Idea mentions alone do not fabricate real achievements. Truth states distinguish concepts, hypotheses, prototypes, fantasy, verified outcomes, and completed software.
 
 Original project models are in `public/assets/projects`; scenery attribution is in `ASSET-CREDITS.md`. Read `AGENTS.md` before contributing.
 
@@ -61,3 +61,15 @@ Give the agent this repository and the specific idea or improvement to work on. 
 Drag to pan, middle-drag to orbit, and scroll toward any point or building. Click an invention or use the navigator to focus it while retaining your viewing direction. Double-click terrain or click the mini-map to move the orbit point. WASD and arrow keys move the focused world camera. Touch supports one-finger orbit and two-finger pan/zoom. The HUD includes project travel and levels, compass, camera position, top view, upgrades, settings, and a side-panel toggle. Resize preserves the view. The neon skyline has been removed.
 
 See [JEV-NPCS.md](JEV-NPCS.md) for optional Jev resident decision setup.
+
+
+### Himalayan Galleries · OS v0.2.2
+
+The northern snow peaks and Ganga are stylized fantasy geography. **Visit idea mall**
+in the resident controls opens Dream Lab's upper exhibitions. Choose a floor,
+**Take lift**, and walk with WASD/arrows; **Return to island** restores your resident
+to where you entered. Two fictional visitors circulate between floors automatically.
+As reserved ground slots fill, each future idea keeps its own model and gains a
+stable upper-floor address in its district. Existing buildings and the coastline
+stay in place. Exhibition visits do not create evidence or upgrade projects.
+See [RELEASES.md](RELEASES.md) for controls, limits and validation.
