@@ -5,6 +5,16 @@ package-lock.json, src/release.ts and these notes aligned. Show the current rele
 in the game and document changes before committing. Save schema versions are
 independent of app versions; never reset history when updating a release.
 
+## v0.2.1 — True Directions · 23 September 2026
+
+Truth state: COMPLETED_BUILD.
+
+- Fixed mirrored sideways movement in walking mode: Left / A moves screen-left;
+  Right / D moves screen-right, including after rotating the camera.
+- Forward/backward movement, sprinting and hopping retain their existing behavior.
+- A regression test projects movement through a real Three.js camera at six headings
+  to verify screen direction rather than merely checking world-coordinate signs.
+
 ## v0.2.0 — Island Walker · 23 September 2026
 
 Truth state: COMPLETED_BUILD.

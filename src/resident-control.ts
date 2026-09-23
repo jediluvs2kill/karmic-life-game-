@@ -11,8 +11,9 @@ export function canStand(point:WalkPoint,tiles:Set<string>){
 /** Explicit input only. Hopping is visual and never bypasses ground or building constraints. */
 export function stepWalker(walker:Walker,input:WalkInput,seconds:number,tiles:Set<string>):Walker{
  const dt=Math.max(0,Math.min(Number.isFinite(seconds)?seconds:0,.05));
- let dx=Math.sin(input.yaw)*input.forward+Math.cos(input.yaw)*input.right;
- let dz=Math.cos(input.yaw)*input.forward-Math.sin(input.yaw)*input.right;
+ // Screen-right is forward cross world-up for the third-person camera.
+ let dx=Math.sin(input.yaw)*input.forward-Math.cos(input.yaw)*input.right;
+ let dz=Math.cos(input.yaw)*input.forward+Math.sin(input.yaw)*input.right;
  const length=Math.hypot(dx,dz);if(length>1){dx/=length;dz/=length;}
  const step=(input.run?5:2.6)*dt;
  let {x,z}=walker;
